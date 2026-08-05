@@ -1,8 +1,8 @@
 # NAME: schmidttt's GoogleAI Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.07.21 22:59:07
-# TOTAL: 41
+# UPDATED: 2026.08.06 02:44:35
+# TOTAL: 42
 #
 # ======== 上游同步规则 ========
 DOMAIN,ai.google.dev
@@ -39,6 +39,7 @@ DOMAIN-SUFFIX,jules.google.com
 DOMAIN-SUFFIX,labs.google
 DOMAIN-SUFFIX,labs.google.com
 DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,notebook.google.com
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN-SUFFIX,opal.google
