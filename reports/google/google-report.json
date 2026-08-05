@@ -1,7 +1,7 @@
 {
   "blackmatrix": {
-    "commit": "40ae51ca0186ee07bd48e1bdc22bdf10f3c66a5e",
-    "committed_at": "2026-07-21T19:15:43Z",
+    "commit": "72c410015dc99df6b54eca1386126f70268bf6bc",
+    "committed_at": "2026-08-05T19:24:33Z",
     "repository": "blackmatrix7/ios_rule_script",
     "requested_ref": "master"
   },
@@ -17,23 +17,23 @@
     "common_domain_rules": 613,
     "note": "Aggregate comparison only; BlackMatrix7 entries are neither merged nor persisted in this repository.",
     "only_blackmatrix_count": 72,
-    "only_v2fly_generated_count": 277
+    "only_v2fly_generated_count": 280
   },
   "counts": {
-    "ads_tagged_in_source": 53,
+    "ads_tagged_in_source": 54,
     "cn_tagged_in_source": 126,
     "exclude_patch": 0,
-    "google_deepmind_unique": 40,
-    "google_expanded": 1110,
-    "google_unique": 1110,
+    "google_deepmind_unique": 41,
+    "google_expanded": 1114,
+    "google_unique": 1114,
     "include_patch": 0,
-    "main_output": 890,
-    "product_exact_excluded": 218,
+    "main_output": 893,
+    "product_exact_excluded": 219,
     "unsupported_regexp_omitted": 2,
     "youtube_unique": 178
   },
   "safety": {
-    "actual_change_ratio": 0.0,
+    "actual_change_ratio": 0.003371,
     "auto_merge_eligible": true,
     "blackmatrix_auto_merged": false,
     "max_change_ratio": 0.1,
@@ -45,8 +45,8 @@
   },
   "schema_version": 2,
   "sukka": {
-    "commit": "a54fa7ea89f3aa4df2ce61358ab8e7c23e5c7b7a",
-    "committed_at": "2026-07-22T06:15:31Z",
+    "commit": "f7cff4516d9e4d39a23988a9328ba2c3fffaef95",
+    "committed_at": "2026-08-05T12:32:16Z",
     "repository": "SukkaW/Surge",
     "requested_ref": "master"
   },
@@ -55,15 +55,15 @@
     "regexp:^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$"
   ],
   "v2fly": {
-    "commit": "b086c38db74b626c0a24fdd8ed41e33515577bf9",
-    "committed_at": "2026-07-21T14:59:07Z",
+    "commit": "98212e79004918e8841a1a6fe0bfeff197aaf3f8",
+    "committed_at": "2026-08-05T18:44:35Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
   "verification": {
-    "auto_resolved_count": 890,
+    "auto_resolved_count": 893,
     "automatic_decision_counts": {
-      "published": 890
+      "published": 893
     },
     "manual_review": [
       {
