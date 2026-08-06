@@ -1,8 +1,8 @@
 # NAME: schmidttt's Google Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.07.21 22:59:07
-# TOTAL: 890
+# UPDATED: 2026.08.06 02:44:35
+# TOTAL: 893
 #
 # ======== 上游同步规则 ========
 DOMAIN,2mdn-cn.net
@@ -233,6 +233,7 @@ DOMAIN-SUFFIX,265.com
 DOMAIN-SUFFIX,2mdn-cn.net
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,466453.com
+DOMAIN-SUFFIX,actifio.com
 DOMAIN-SUFFIX,adgoogle.net
 DOMAIN-SUFFIX,admeld.com
 DOMAIN-SUFFIX,admob-cn.com
@@ -254,6 +255,7 @@ DOMAIN-SUFFIX,androidify.com
 DOMAIN-SUFFIX,angulardart.org
 DOMAIN-SUFFIX,api.ai
 DOMAIN-SUFFIX,apigee.com
+DOMAIN-SUFFIX,app-ads-services.com
 DOMAIN-SUFFIX,app-analytics-services-att.com
 DOMAIN-SUFFIX,app-analytics-services.com
 DOMAIN-SUFFIX,app-measurement-cn.com
@@ -784,6 +786,7 @@ DOMAIN-SUFFIX,opensourceinsight.dev
 DOMAIN-SUFFIX,opensourceinsights.dev
 DOMAIN-SUFFIX,openthread.io
 DOMAIN-SUFFIX,openweave.io
+DOMAIN-SUFFIX,openxla.org
 DOMAIN-SUFFIX,orbitera.com
 DOMAIN-SUFFIX,page.link
 DOMAIN-SUFFIX,pagead.l.google.com
