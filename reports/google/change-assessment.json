@@ -1,14 +1,10 @@
 {
-  "actual_change_count": 3,
-  "actual_change_ratio": 0.003371,
-  "added": [
-    "DOMAIN-SUFFIX,actifio.com",
-    "DOMAIN-SUFFIX,app-ads-services.com",
-    "DOMAIN-SUFFIX,openxla.org"
-  ],
-  "added_count": 3,
+  "actual_change_count": 0,
+  "actual_change_ratio": 0.0,
+  "added": [],
+  "added_count": 0,
   "auto_merge_eligible": true,
-  "baseline_rules": 890,
+  "baseline_rules": 893,
   "classification": "low-risk",
   "generated_rules": 893,
   "increased_reference_manual_review": {},
