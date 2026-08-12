@@ -128,6 +128,7 @@ def render_comment(
     review_guide: str,
     mention: bool,
 ) -> str:
+    risk_level = str(assessment.get("classification", "high-risk"))
     reasons = assessment.get("reasons")
     reason_values = reasons if isinstance(reasons, list) else []
     reason_lines = [
@@ -152,7 +153,7 @@ def render_comment(
     lines.extend(
         [
             "- 规则组：`{}`".format(product),
-            "- 分类：`review-required`",
+            "- 分类：`{}`".format(risk_level),
             "- 新增：{} 条".format(assessment.get("added_count", "unknown")),
             "- 删除：{} 条".format(assessment.get("removed_count", "unknown")),
         ]
@@ -212,7 +213,7 @@ def notify(
     review_guide: str,
     gh_runner: GhRunner = run_gh,
 ) -> str:
-    if assessment.get("classification") != "review-required":
+    if assessment.get("classification") not in {"medium-risk", "high-risk"}:
         return "skipped-low-risk"
     fingerprint = notification_fingerprint(product, assessment, evidence)
     marker = "<!-- surge-rules-review:{}:{} -->".format(product, fingerprint)

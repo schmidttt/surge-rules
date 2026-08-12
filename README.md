@@ -134,7 +134,8 @@ Surge 中必须先引用 GameCN。
 - 只读参考源已覆盖、单一来源差异和已确认例外由程序自动处理；
 - 两个以上参考源共同指出但无法确认的差异才进入人工审核；
 - 人工审核集合发生变化会阻止对应规则的低风险自动合并；
-- `review-required` PR 会向仓库所有者请求审核，并按风险指纹去重通知；
+- 风险统一分为 `low-risk`、`medium-risk`、`high-risk`；只有中高风险 PR
+  会向仓库所有者请求审核，并按风险指纹去重通知；
 - GoogleAI 与 AI 的父子域覆盖、AI 中的 Google/国内 AI 泄漏会直接失败；
 - 证据目录无效或精确主机决定没有落实到产物会直接失败；
 - GoogleCN 新的模糊候选不会发布，并会阻止自动合并；
@@ -148,10 +149,10 @@ Surge 中必须先引用 GameCN。
 
 - `ENABLE_SCHEDULED_SYNC=true`：启用定时同步。
 - `SYNC_PHASE=stable`：从观察期切换到稳定期。
-- `AUTO_MERGE_LOW_RISK=true`：允许通过全部门禁的更新自动合并。
 
-在 Google 与 AI 覆盖门禁完成试运行前，应保持
-`AUTO_MERGE_LOW_RISK=false`。
+低风险更新不再依赖额外开关。工作流会在自动 PR 的精确 HEAD 上主动运行
+完整仓库校验，校验成功且 PR HEAD 未变化时才 squash 合并；中高风险始终
+保留给人工确认。
 
 ## 目录
 
