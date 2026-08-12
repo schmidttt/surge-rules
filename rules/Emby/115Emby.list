@@ -1,0 +1,16 @@
+# NAME: schmidttt's 115 Emby Ruleset
+# AUTHOR: schmidttt
+# REPO: https://github.com/schmidttt/surge-rules
+# UPDATED: 2026.08.12 20:59:39
+# TOTAL: 9
+#
+# ======== 手工维护域名 ========
+DOMAIN-SUFFIX,115.cn
+DOMAIN-SUFFIX,115.com
+DOMAIN-SUFFIX,115.net
+DOMAIN-SUFFIX,115cdn.com
+DOMAIN-SUFFIX,115cdn.net
+DOMAIN-SUFFIX,115dot.com
+DOMAIN-SUFFIX,anxia.com
+DOMAIN-SUFFIX,lightting.net
+DOMAIN-SUFFIX,stluma.com
