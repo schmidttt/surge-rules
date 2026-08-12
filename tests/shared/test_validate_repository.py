@@ -26,11 +26,24 @@ class RepositoryListValidationTests(unittest.TestCase):
                 [
                     "DOMAIN-SUFFIX,115.com",
                     "DOMAIN-SUFFIX,115cdn.net",
+                    "DOMAIN,cdn.wenjian.de",
+                    "DOMAIN,1.cdn.wenjian.de",
+                    "DOMAIN,2.cdn.wenjian.de",
+                    "DOMAIN,3.cdn.wenjian.de",
                 ],
             )
-            count, rules = validate_list(path, 2)
-            self.assertEqual(count, 2)
+            count, rules = validate_list(path, 6)
+            self.assertEqual(count, 6)
             self.assertIn("DOMAIN-SUFFIX,115cdn.net", rules)
+            self.assertEqual(
+                rules[-4:],
+                [
+                    "DOMAIN,cdn.wenjian.de",
+                    "DOMAIN,1.cdn.wenjian.de",
+                    "DOMAIN,2.cdn.wenjian.de",
+                    "DOMAIN,3.cdn.wenjian.de",
+                ],
+            )
 
     def test_115_emby_rejects_ip_cidr(self):
         with tempfile.TemporaryDirectory() as temporary:
