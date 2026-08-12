@@ -29,7 +29,7 @@ EXPECTED_LISTS = {
     "rules/BiliBili/BiliBili.list": 30,
     "rules/Game/Game.list": 150,
     "rules/GameCN/GameCN.list": 20,
-    "rules/Emby/115Emby.list": 9,
+    "rules/Emby/115Emby.list": 13,
 }
 EXPECTED_VERIFICATION_REPORTS = (
     "reports/google/google-report.json",
