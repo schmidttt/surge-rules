@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import ipaddress
 import json
 import re
 import sys
@@ -30,7 +29,7 @@ EXPECTED_LISTS = {
     "rules/BiliBili/BiliBili.list": 30,
     "rules/Game/Game.list": 150,
     "rules/GameCN/GameCN.list": 20,
-    "rules/Emby/Emby.list": 10,
+    "rules/Emby/115Emby.list": 9,
 }
 EXPECTED_VERIFICATION_REPORTS = (
     "reports/google/google-report.json",
@@ -87,22 +86,6 @@ def validate_list(path: Path, minimum: int) -> Tuple[int, List[str]]:
         if rule_type in {"DOMAIN", "DOMAIN-SUFFIX"}:
             if len(parts) != 2 or not parts[1] or parts[1] != parts[1].lower():
                 raise ValidationError("{} has invalid domain rule {!r}".format(path, line))
-            continue
-        if rule_type == "IP-CIDR":
-            if not path.as_posix().endswith("/rules/Emby/Emby.list"):
-                raise ValidationError(
-                    "{} must not contain IP-CIDR rules".format(path)
-                )
-            if len(parts) != 2:
-                raise ValidationError("{} has invalid IP rule {!r}".format(path, line))
-            try:
-                network = ipaddress.ip_network(parts[1], strict=True)
-            except ValueError as exc:
-                raise ValidationError(
-                    "{} has invalid IP network {!r}".format(path, line)
-                ) from exc
-            if network.version != 4:
-                raise ValidationError("{} has non-IPv4 IP-CIDR {!r}".format(path, line))
             continue
         raise ValidationError("{} has invalid rule {!r}".format(path, line))
     return len(rules), rules

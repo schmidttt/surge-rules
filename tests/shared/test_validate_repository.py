@@ -18,26 +18,26 @@ class RepositoryListValidationTests(unittest.TestCase):
         path.write_bytes("\n".join(lines).encode("utf-8"))
         return path
 
-    def test_emby_accepts_exact_ipv4_cidr(self):
+    def test_115_emby_accepts_domain_rules(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = self.write_list(
                 Path(temporary),
-                "rules/Emby/Emby.list",
+                "rules/Emby/115Emby.list",
                 [
-                    "DOMAIN-SUFFIX,example.com",
-                    "IP-CIDR,110.42.42.172/32",
+                    "DOMAIN-SUFFIX,115.com",
+                    "DOMAIN-SUFFIX,115cdn.net",
                 ],
             )
             count, rules = validate_list(path, 2)
             self.assertEqual(count, 2)
-            self.assertIn("IP-CIDR,110.42.42.172/32", rules)
+            self.assertIn("DOMAIN-SUFFIX,115cdn.net", rules)
 
-    def test_emby_rejects_noncanonical_ipv4_network(self):
+    def test_115_emby_rejects_ip_cidr(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = self.write_list(
                 Path(temporary),
-                "rules/Emby/Emby.list",
-                ["IP-CIDR,110.42.42.172/24"],
+                "rules/Emby/115Emby.list",
+                ["IP-CIDR,192.0.2.1/32"],
             )
             with self.assertRaises(ValidationError):
                 validate_list(path, 1)
@@ -47,7 +47,7 @@ class RepositoryListValidationTests(unittest.TestCase):
             path = self.write_list(
                 Path(temporary),
                 "rules/Google/Google.list",
-                ["IP-CIDR,110.42.42.172/32"],
+                ["IP-CIDR,192.0.2.1/32"],
             )
             with self.assertRaises(ValidationError):
                 validate_list(path, 1)

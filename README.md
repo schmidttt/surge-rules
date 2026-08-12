@@ -2,7 +2,7 @@
 
 为 Surge 构建可审核、可回退、按策略目标拆分的个人规则库。自动生成的
 正式产物以 `v2fly/domain-list-community` 为唯一上游；Sukka 与
-BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本仓库。Emby
+BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本仓库。115 Emby
 规则表由仓库所有者手工维护。
 
 当前公开十张规则表：
@@ -18,7 +18,7 @@ BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本�
 | BiliBili | BiliBili 专用策略 | [`rules/BiliBili/BiliBili.list`](rules/BiliBili/BiliBili.list) |
 | Game | Epic、PlayStation、Steam、Nintendo 的海外/通用入口 | [`rules/Game/Game.list`](rules/Game/Game.list) |
 | GameCN | 上述游戏平台的中国大陆入口 | [`rules/GameCN/GameCN.list`](rules/GameCN/GameCN.list) |
-| Emby | 手工维护的 Emby 服务域名及精确线路 | [`rules/Emby/Emby.list`](rules/Emby/Emby.list) |
+| 115Emby | 手工维护的 115 Emby 服务域名 | [`rules/Emby/115Emby.list`](rules/Emby/115Emby.list) |
 
 ## Surge 推荐顺序
 
@@ -41,7 +41,7 @@ RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Game
 
 RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/TikTok/TikTok.list,📱 TikTok,...
 RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/BiliBili/BiliBili.list,📺 BiliBili,...
-RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/Emby.list,🎞️ Emby,no-resolve,extended-matching
+RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/115Emby.list,🎞️ Emby,no-resolve,extended-matching
 RULE-SET,https://ruleset.skk.moe/List/non_ip/stream.conf,🎬 Streaming,...
 ```
 
@@ -111,7 +111,7 @@ Surge 中必须先引用 GameCN。
 - YouTube、TikTok、BiliBili 分别独立生成和审计。
 - BiliBili 同时包含大陆及国际版域名，日常可选择 `DIRECT`，需要时整体
   切换香港或台湾入口。
-- Emby 为手工维护列表，包含服务根域名、精确备用主机和单 IP 线路；应在
+- 115Emby 为手工维护列表，包含 115 Emby 服务所需域名；应在
   其他国际流媒体与兜底规则之前引用。
 - Sukka stream 继续处理其他国际流媒体。
 - 本仓库不生成 DomesticMedia，不建议再引用 BlackMatrix7 ChinaMedia。
@@ -187,7 +187,7 @@ surge-rules/
 │   ├── BiliBili/BiliBili.list
 │   ├── Game/Game.list
 │   ├── GameCN/GameCN.list
-│   └── Emby/Emby.list
+│   └── Emby/115Emby.list
 ├── scripts/
 │   ├── shared/v2fly.py
 │   ├── shared/reference_verifier.py
@@ -237,7 +237,7 @@ https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/TikTok/TikTok
 https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/BiliBili/BiliBili.list
 https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Game/Game.list
 https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/GameCN/GameCN.list
-https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/Emby.list
+https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/115Emby.list
 ```
 
 ## 许可
