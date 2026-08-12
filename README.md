@@ -187,7 +187,7 @@ surge-rules/
 │   ├── BiliBili/BiliBili.list
 │   ├── Game/Game.list
 │   ├── GameCN/GameCN.list
-│   └── Emby/Emby.list
+│   └── Emby/115Emby.list
 ├── scripts/
 │   ├── shared/v2fly.py
 │   ├── shared/reference_verifier.py
