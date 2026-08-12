@@ -21,6 +21,7 @@ jobs:
          (github.event.schedule == '0 4 * * 2,4,6' && vars.SYNC_PHASE == 'stable')))
     runs-on: ubuntu-latest
     permissions:
+      actions: write
       contents: write
       issues: write
       pull-requests: write
@@ -45,6 +46,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 scripts/media/build_media_rules.py --product bilibili --fetch
+
+      - name: Normalize risk classification
+        run: >-
+          python3 scripts/shared/risk_policy.py
+          --assessment reports/bilibili/change-assessment.json
 
       - name: Validate repository
         run: python3 scripts/validate_repository.py
@@ -119,7 +125,7 @@ jobs:
       - name: Notify repository owner for risky refresh
         if: >-
           steps.changes.outputs.changed == 'true' &&
-          steps.risk.outputs.classification == 'review-required'
+          steps.risk.outputs.classification != 'low-risk'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -136,17 +142,20 @@ jobs:
       - name: Auto-merge low-risk refresh
         if: >-
           steps.changes.outputs.changed == 'true' &&
-          steps.risk.outputs.auto_merge == 'true' &&
-          vars.AUTO_MERGE_LOW_RISK == 'true'
+          steps.risk.outputs.auto_merge == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh pr merge "${{ steps.review_pr.outputs.url }}" --squash --delete-branch
+        run: |
+          python3 scripts/shared/merge_low_risk.py \
+            --repository "${{ github.repository }}" \
+            --pr-url "${{ steps.review_pr.outputs.url }}" \
+            --assessment reports/bilibili/change-assessment.json \
+            --workflow validate-repository.yml
 
       - name: Keep risky refresh for review
         if: >-
           steps.changes.outputs.changed == 'true' &&
-          (steps.risk.outputs.auto_merge != 'true' ||
-           vars.AUTO_MERGE_LOW_RISK != 'true')
+          steps.risk.outputs.auto_merge != 'true'
         run: >-
           echo "::warning::BiliBili rules refresh requires review:
           ${{ steps.review_pr.outputs.url }}"

@@ -1,10 +1,11 @@
 # surge-rules
 
-为 Surge 构建可审核、可回退、按策略目标拆分的个人规则库。正式产物以
-`v2fly/domain-list-community` 为唯一自动生成上游；Sukka 与
-BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本仓库。
+为 Surge 构建可审核、可回退、按策略目标拆分的个人规则库。自动生成的
+正式产物以 `v2fly/domain-list-community` 为唯一上游；Sukka 与
+BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本仓库。Emby
+规则表由仓库所有者手工维护。
 
-当前公开九张规则表：
+当前公开十张规则表：
 
 | 规则 | 策略目标 | 正式产物 |
 |---|---|---|
@@ -17,6 +18,7 @@ BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本�
 | BiliBili | BiliBili 专用策略 | [`rules/BiliBili/BiliBili.list`](rules/BiliBili/BiliBili.list) |
 | Game | Epic、PlayStation、Steam、Nintendo 的海外/通用入口 | [`rules/Game/Game.list`](rules/Game/Game.list) |
 | GameCN | 上述游戏平台的中国大陆入口 | [`rules/GameCN/GameCN.list`](rules/GameCN/GameCN.list) |
+| Emby | 手工维护的 Emby 服务域名及精确线路 | [`rules/Emby/Emby.list`](rules/Emby/Emby.list) |
 
 ## Surge 推荐顺序
 
@@ -39,6 +41,7 @@ RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Game
 
 RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/TikTok/TikTok.list,📱 TikTok,...
 RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/BiliBili/BiliBili.list,📺 BiliBili,...
+RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/Emby.list,🎞️ Emby,no-resolve,extended-matching
 RULE-SET,https://ruleset.skk.moe/List/non_ip/stream.conf,🎬 Streaming,...
 ```
 
@@ -108,6 +111,8 @@ Surge 中必须先引用 GameCN。
 - YouTube、TikTok、BiliBili 分别独立生成和审计。
 - BiliBili 同时包含大陆及国际版域名，日常可选择 `DIRECT`，需要时整体
   切换香港或台湾入口。
+- Emby 为手工维护列表，包含服务根域名、精确备用主机和单 IP 线路；应在
+  其他国际流媒体与兜底规则之前引用。
 - Sukka stream 继续处理其他国际流媒体。
 - 本仓库不生成 DomesticMedia，不建议再引用 BlackMatrix7 ChinaMedia。
   国内站点由专用规则、Sukka domestic、China IP 与 GEOIP CN 接管；
@@ -125,11 +130,12 @@ Surge 中必须先引用 GameCN。
 - 新增数量、真实变动率和大幅变更分别设独立阈值；
 - 核心域名、最小规则数、语法、重复项和文件末尾换行均会校验；
 - 不支持的上游语法发生变化时必须审核；
-- 全部九张规则表都必须生成统一 `verification` 报告；
+- 九张自动生成规则表都必须生成统一 `verification` 报告；
 - 只读参考源已覆盖、单一来源差异和已确认例外由程序自动处理；
 - 两个以上参考源共同指出但无法确认的差异才进入人工审核；
 - 人工审核集合发生变化会阻止对应规则的低风险自动合并；
-- `review-required` PR 会向仓库所有者请求审核，并按风险指纹去重通知；
+- 风险统一分为 `low-risk`、`medium-risk`、`high-risk`；只有中高风险 PR
+  会向仓库所有者请求审核，并按风险指纹去重通知；
 - GoogleAI 与 AI 的父子域覆盖、AI 中的 Google/国内 AI 泄漏会直接失败；
 - 证据目录无效或精确主机决定没有落实到产物会直接失败；
 - GoogleCN 新的模糊候选不会发布，并会阻止自动合并；
@@ -143,10 +149,10 @@ Surge 中必须先引用 GameCN。
 
 - `ENABLE_SCHEDULED_SYNC=true`：启用定时同步。
 - `SYNC_PHASE=stable`：从观察期切换到稳定期。
-- `AUTO_MERGE_LOW_RISK=true`：允许通过全部门禁的更新自动合并。
 
-在 Google 与 AI 覆盖门禁完成试运行前，应保持
-`AUTO_MERGE_LOW_RISK=false`。
+低风险更新不再依赖额外开关。工作流会在自动 PR 的精确 HEAD 上主动运行
+完整仓库校验，校验成功且 PR HEAD 未变化时才 squash 合并；中高风险始终
+保留给人工确认。
 
 ## 目录
 
@@ -180,7 +186,8 @@ surge-rules/
 │   ├── TikTok/TikTok.list
 │   ├── BiliBili/BiliBili.list
 │   ├── Game/Game.list
-│   └── GameCN/GameCN.list
+│   ├── GameCN/GameCN.list
+│   └── Emby/Emby.list
 ├── scripts/
 │   ├── shared/v2fly.py
 │   ├── shared/reference_verifier.py
@@ -230,6 +237,7 @@ https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/TikTok/TikTok
 https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/BiliBili/BiliBili.list
 https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Game/Game.list
 https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/GameCN/GameCN.list
+https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/Emby.list
 ```
 
 ## 许可
