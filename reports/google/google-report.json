@@ -1,7 +1,7 @@
 {
   "blackmatrix": {
-    "commit": "ccc2d6b711007324bacb55cdfbbf7e36ad48145a",
-    "committed_at": "2026-08-07T18:52:17Z",
+    "commit": "86ada72372ec0586be75901f47d5ccca6e28c655",
+    "committed_at": "2026-08-11T18:59:15Z",
     "repository": "blackmatrix7/ios_rule_script",
     "requested_ref": "master"
   },
@@ -45,8 +45,8 @@
   },
   "schema_version": 2,
   "sukka": {
-    "commit": "5bddfd48489e0f6dff30e02a4a97e4c9c7ae2a82",
-    "committed_at": "2026-08-08T15:02:22Z",
+    "commit": "a11cd32e4a1cb2ec613f8de7383c58a3b13e461a",
+    "committed_at": "2026-08-10T23:08:33Z",
     "repository": "SukkaW/Surge",
     "requested_ref": "master"
   },
@@ -55,8 +55,8 @@
     "regexp:^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$"
   ],
   "v2fly": {
-    "commit": "383272bf0a263de550d65fed9b8520aab55dfcb4",
-    "committed_at": "2026-08-07T14:52:15Z",
+    "commit": "90b6bb94709c014918d83a4eb63f3593b7d00eb8",
+    "committed_at": "2026-08-11T10:03:32Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
