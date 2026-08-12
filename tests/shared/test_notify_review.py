@@ -14,7 +14,7 @@ SPEC.loader.exec_module(MODULE)
 class NotificationTests(unittest.TestCase):
     def assessment(self):
         return {
-            "classification": "review-required",
+            "classification": "high-risk",
             "added_count": 2,
             "removed_count": 1,
             "reasons": ["rules-removed"],
@@ -60,6 +60,29 @@ class NotificationTests(unittest.TestCase):
             [{"verification": {"manual_review": [{"identity": "domain:b.test"}]}}],
         )
         self.assertNotEqual(first, second)
+
+    def test_medium_risk_is_reported(self):
+        assessment = self.assessment()
+        assessment["classification"] = "medium-risk"
+        calls = []
+
+        def fake_runner(arguments, payload):
+            calls.append((list(arguments), payload))
+            return ""
+
+        result = MODULE.notify(
+            "owner/repo",
+            8,
+            "owner",
+            "Google",
+            assessment,
+            [],
+            "docs/rules/google/REVIEW_CHECKLIST.md",
+            fake_runner,
+        )
+        self.assertEqual(result, "review-requested")
+        comment = calls[-1][1]["body"]
+        self.assertIn("`medium-risk`", comment)
 
     def test_new_notification_requests_review_then_comments(self):
         calls = []
