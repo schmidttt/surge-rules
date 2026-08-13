@@ -1,17 +1,16 @@
 {
-  "actual_change_ratio": 0.00463,
-  "added": [
-    "Game:DOMAIN-SUFFIX,artstationmedia.com"
-  ],
-  "added_count": 1,
+  "actual_change_ratio": 0.0,
+  "added": [],
+  "added_count": 0,
   "auto_merge_eligible": true,
-  "baseline_rules": 216,
+  "baseline_rules": 217,
   "classification": "low-risk",
   "generated_rules": 217,
   "reasons": [],
   "removed": [],
   "removed_count": 0,
-  "schema_version": 1,
+  "risk_level": "low-risk",
+  "schema_version": 2,
   "thresholds": {
     "automatic_deletions_allowed": false,
     "max_auto_additions": 10,
