@@ -1,0 +1,7 @@
+# Automation and validation changes should always be reviewed by the repository owner.
+/.github/CODEOWNERS @schmidttt
+/.github/dependabot.yml @schmidttt
+/.github/workflows/ @schmidttt
+/scripts/shared/ @schmidttt
+/scripts/validate_repository.py @schmidttt
+/tests/shared/ @schmidttt
