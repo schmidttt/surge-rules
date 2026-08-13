@@ -3,9 +3,9 @@ name: Sync BiliBili rules
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 4 * * *"
+    - cron: "10 4 * * *"
       timezone: "Asia/Shanghai"
-    - cron: "0 4 * * 2,4,6"
+    - cron: "10 4 * * 2,4,6"
       timezone: "Asia/Shanghai"
 
 concurrency:
@@ -17,8 +17,8 @@ jobs:
     if: >-
       github.event_name == 'workflow_dispatch' ||
       (vars.ENABLE_SCHEDULED_SYNC == 'true' &&
-        ((github.event.schedule == '0 4 * * *' && vars.SYNC_PHASE != 'stable') ||
-         (github.event.schedule == '0 4 * * 2,4,6' && vars.SYNC_PHASE == 'stable')))
+        ((github.event.schedule == '10 4 * * *' && vars.SYNC_PHASE != 'stable') ||
+         (github.event.schedule == '10 4 * * 2,4,6' && vars.SYNC_PHASE == 'stable')))
     runs-on: ubuntu-latest
     permissions:
       actions: write
@@ -28,12 +28,12 @@ jobs:
 
     steps:
       - name: Check out default branch
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
 
@@ -111,7 +111,14 @@ jobs:
           Review guide: docs/rules/media/REVIEW_CHECKLIST.md
           EOF
 
-          if PR_URL=$(gh pr view "$REVIEW_BRANCH" --json url --jq .url 2>/dev/null); then
+          PR_URL=$(gh pr list \
+            --base "$BASE_BRANCH" \
+            --head "$REVIEW_BRANCH" \
+            --state open \
+            --json url \
+            --jq '.[0].url // ""')
+
+          if [ -n "$PR_URL" ]; then
             gh pr edit "$PR_URL" --body-file /tmp/bilibili-rules-pr.md
           else
             PR_URL=$(gh pr create \
@@ -121,6 +128,7 @@ jobs:
               --body-file /tmp/bilibili-rules-pr.md)
           fi
           echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Notify repository owner for risky refresh
         if: >-
@@ -150,7 +158,11 @@ jobs:
             --repository "${{ github.repository }}" \
             --pr-url "${{ steps.review_pr.outputs.url }}" \
             --assessment reports/bilibili/change-assessment.json \
-            --workflow validate-repository.yml
+            --workflow validate-repository.yml \
+            --allowed-path rules/BiliBili \
+            --allowed-path reports/bilibili \
+            --expected-branch automation/bilibili-rules-sync \
+            --expected-head-sha "${{ steps.review_pr.outputs.head_sha }}"
 
       - name: Keep risky refresh for review
         if: >-
