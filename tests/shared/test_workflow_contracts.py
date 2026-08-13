@@ -1,11 +1,19 @@
-import re
 import unittest
 from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 WORKFLOW_ROOT = PROJECT_ROOT / ".github/workflows"
-PINNED_ACTION = re.compile(r"uses: actions/(?:checkout|setup-python)@[0-9a-f]{40} # v6$")
+PINNED_ACTIONS = {
+    "actions/checkout": (
+        "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "v7.0.1",
+    ),
+    "actions/setup-python": (
+        "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "v7.0.0",
+    ),
+}
 
 SYNC_CONTRACTS = {
     "sync-ai-rules.yml": {
@@ -113,7 +121,11 @@ class WorkflowContractTests(unittest.TestCase):
             uses = [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if "uses:" in line]
             with self.subTest(workflow=path.name):
                 self.assertTrue(uses)
-                self.assertTrue(all(PINNED_ACTION.fullmatch(line) for line in uses), uses)
+                expected = {
+                    "uses: {}@{} # {}".format(action, sha, version)
+                    for action, (sha, version) in PINNED_ACTIONS.items()
+                }
+                self.assertTrue(all(line in expected for line in uses), uses)
 
     def test_pull_request_validation_is_read_only_and_secret_free(self):
         text = (WORKFLOW_ROOT / "validate-repository.yml").read_text(encoding="utf-8")
