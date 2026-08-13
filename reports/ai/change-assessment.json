@@ -1,17 +1,9 @@
 {
-  "actual_change_ratio": 0.04142,
-  "added": [
-    "AI:DOMAIN-SUFFIX,deepwiki.com",
-    "AI:DOMAIN-SUFFIX,deepwiki.org",
-    "AI:DOMAIN-SUFFIX,grazie.ai",
-    "AI:DOMAIN-SUFFIX,grazie.aws.intellij.net",
-    "AI:DOMAIN-SUFFIX,grokipedia.com",
-    "AI:DOMAIN-SUFFIX,jetbrains.ai",
-    "GoogleAI:DOMAIN-SUFFIX,notebook.google.com"
-  ],
-  "added_count": 7,
+  "actual_change_ratio": 0.0,
+  "added": [],
+  "added_count": 0,
   "auto_merge_eligible": true,
-  "baseline_rules": 169,
+  "baseline_rules": 176,
   "classification": "low-risk",
   "generated_rules": 176,
   "previous_sukka_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -19,7 +11,8 @@
   "reasons": [],
   "removed": [],
   "removed_count": 0,
-  "schema_version": 1,
+  "risk_level": "low-risk",
+  "schema_version": 2,
   "sukka_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "sukka_uncovered": 0,
   "thresholds": {
