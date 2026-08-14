@@ -4,3 +4,7 @@
 domain:ibytedtos.com
 domain:ipstatp.com
 domain:isnssdk.com
+# 2026-08-14：v2fly 将 byteoversea.com 从 TikTok 移到更宽泛的 ByteDance 分类，
+# 但本仓库没有单独发布 ByteDance 规则；Sukka 与 BlackMatrix7 仍共同归入 TikTok，
+# 因此显式保留，避免该域名及其子域绕过 TikTok 专用线路。
+domain:byteoversea.com

@@ -43,6 +43,17 @@ class ParserTests(unittest.TestCase):
         self.assertIn(("full", "manual.tiktok.example"), identities)
         self.assertNotIn(("domain", "musical.ly"), identities)
 
+    def test_project_tiktok_patch_preserves_byteoversea(self):
+        config = replace(MODULE.PRODUCTS["tiktok"], minimum_rules=1)
+        include = MODULE.parse_patch(
+            PROJECT_ROOT / "patches" / "tiktok" / "include.txt"
+        )
+        rules, _, _ = MODULE.build_product_rules(
+            self.tree, config, include, []
+        )
+        identities = {rule.identity for rule in rules}
+        self.assertIn(("domain", "byteoversea.com"), identities)
+
     def test_bilibili_expands_cdn_and_game_lists(self):
         config = replace(MODULE.PRODUCTS["bilibili"], minimum_rules=1)
         rules, _, _ = MODULE.build_product_rules(self.tree, config, [], [])
