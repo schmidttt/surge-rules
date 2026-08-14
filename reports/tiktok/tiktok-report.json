@@ -2,11 +2,11 @@
   "counts": {
     "ads_tagged_in_source": 1,
     "exclude_patch": 0,
-    "include_patch": 3,
-    "not_cn_tagged_in_source": 36,
+    "include_patch": 4,
+    "not_cn_tagged_in_source": 35,
     "output": 40,
-    "source_expanded": 37,
-    "source_unique": 37
+    "source_expanded": 36,
+    "source_unique": 36
   },
   "product": "TikTok",
   "safety": {
@@ -22,8 +22,8 @@
   "schema_version": 1,
   "unsupported_omitted": [],
   "v2fly": {
-    "commit": "b086c38db74b626c0a24fdd8ed41e33515577bf9",
-    "committed_at": "2026-07-21T14:59:07Z",
+    "commit": "0c3e33f531cf9e164704262decdb55441abef12f",
+    "committed_at": "2026-08-13T11:58:32Z",
     "list": "tiktok",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"

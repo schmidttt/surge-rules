@@ -16,7 +16,8 @@
   "reference_manual_review_set_changed": false,
   "removed": [],
   "removed_count": 0,
-  "schema_version": 1,
+  "risk_level": "low-risk",
+  "schema_version": 2,
   "thresholds": {
     "automatic_deletions_allowed": false,
     "max_auto_additions": 2,
