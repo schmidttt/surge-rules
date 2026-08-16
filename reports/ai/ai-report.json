@@ -3,7 +3,7 @@
     "ai_exclude_patch": 0,
     "ai_include_patch": 2,
     "ai_output": 134,
-    "domestic_ai_reference": 113,
+    "domestic_ai_reference": 114,
     "google_ai_exclude_patch": 0,
     "google_ai_expanded": 41,
     "google_ai_include_patch": 1,
@@ -30,8 +30,8 @@
       "requested_ref": "master"
     },
     "v2fly": {
-      "commit": "5355f5919be7d365e2d80488da42a77f37a7ea2b",
-      "committed_at": "2026-08-15T02:40:07Z",
+      "commit": "6f8a5b43db087ae27decef85d80229850bbd40b1",
+      "committed_at": "2026-08-16T11:17:33Z",
       "repository": "v2fly/domain-list-community",
       "requested_ref": "master"
     }
