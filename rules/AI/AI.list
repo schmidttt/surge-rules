@@ -1,8 +1,8 @@
 # NAME: schmidttt's AI Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.08.18 11:05:26
-# TOTAL: 134
+# UPDATED: 2026.08.19 22:47:58
+# TOTAL: 140
 #
 # ======== 上游同步规则 ========
 DOMAIN,ai.com
@@ -72,6 +72,7 @@ DOMAIN-SUFFIX,diabrowser.com
 DOMAIN-SUFFIX,diabrowser.engineering
 DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,dola.com
+DOMAIN-SUFFIX,dreamgen.com
 DOMAIN-SUFFIX,duck.ai
 DOMAIN-SUFFIX,elevenlabs.com
 DOMAIN-SUFFIX,elevenlabs.io
@@ -93,6 +94,7 @@ DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,huggingface.co
 DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,jetbrains.ai
+DOMAIN-SUFFIX,kimi.ai
 DOMAIN-SUFFIX,kiro.dev
 DOMAIN-SUFFIX,langchain.com
 DOMAIN-SUFFIX,liveperson.net
@@ -106,7 +108,10 @@ DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,midjourney.com
 DOMAIN-SUFFIX,minimax.io
 DOMAIN-SUFFIX,mistral.ai
+DOMAIN-SUFFIX,moonshot.ai
 DOMAIN-SUFFIX,mozilla.ai
+DOMAIN-SUFFIX,notegpt.io
+DOMAIN-SUFFIX,novelai.net
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaistatsig.com
 DOMAIN-SUFFIX,oaiusercontent.com
@@ -128,6 +133,7 @@ DOMAIN-SUFFIX,qoder.com
 DOMAIN-SUFFIX,sider.ai
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,spicywriter.com
+DOMAIN-SUFFIX,talkai.info
 DOMAIN-SUFFIX,tapnow.ai
 DOMAIN-SUFFIX,themeforest.net
 DOMAIN-SUFFIX,trae.ai
