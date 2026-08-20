@@ -129,6 +129,7 @@ jobs:
           fi
           echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
           echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "base_sha=$(git rev-parse HEAD^)" >> "$GITHUB_OUTPUT"
 
       - name: Notify repository owner for risky refresh
         if: >-
@@ -162,7 +163,8 @@ jobs:
             --allowed-path rules/BiliBili \
             --allowed-path reports/bilibili \
             --expected-branch automation/bilibili-rules-sync \
-            --expected-head-sha "${{ steps.review_pr.outputs.head_sha }}"
+            --expected-head-sha "${{ steps.review_pr.outputs.head_sha }}" \
+            --expected-base-sha "${{ steps.review_pr.outputs.base_sha }}"
 
       - name: Keep risky refresh for review
         if: >-
