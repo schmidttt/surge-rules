@@ -26,8 +26,8 @@
       "requested_ref": "master"
     },
     "sukka": {
-      "commit": "aa7f1428b0f4320bfc02fbcd4c80854e74958983",
-      "committed_at": "2026-08-19T01:29:28Z",
+      "commit": "f04a669626049097fc34c47d896a4495ec7eff66",
+      "committed_at": "2026-08-20T15:29:15Z",
       "covered_by_generated": 9,
       "domain_rules": 9,
       "entries_persisted": false,
