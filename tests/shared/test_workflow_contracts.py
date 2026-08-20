@@ -106,11 +106,16 @@ class WorkflowContractTests(unittest.TestCase):
             text = (WORKFLOW_ROOT / name).read_text(encoding="utf-8")
             with self.subTest(workflow=name):
                 self.assertIn('echo "head_sha=$(git rev-parse HEAD)"', text)
+                self.assertIn('echo "base_sha=$(git rev-parse HEAD^)"', text)
                 self.assertIn(
                     "--expected-branch {}".format(contract["branch"]), text
                 )
                 self.assertIn(
                     '--expected-head-sha "${{ steps.review_pr.outputs.head_sha }}"',
+                    text,
+                )
+                self.assertIn(
+                    '--expected-base-sha "${{ steps.review_pr.outputs.base_sha }}"',
                     text,
                 )
                 for path in contract["paths"]:

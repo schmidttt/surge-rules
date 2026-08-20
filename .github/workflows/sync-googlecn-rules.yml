@@ -129,6 +129,7 @@ jobs:
           fi
           echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
           echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "base_sha=$(git rev-parse HEAD^)" >> "$GITHUB_OUTPUT"
 
       - name: Notify repository owner for risky refresh
         if: >-
@@ -161,7 +162,8 @@ jobs:
             --allowed-path rules/GoogleCN \
             --allowed-path reports/googlecn \
             --expected-branch automation/googlecn-rules-sync \
-            --expected-head-sha "${{ steps.review_pr.outputs.head_sha }}"
+            --expected-head-sha "${{ steps.review_pr.outputs.head_sha }}" \
+            --expected-base-sha "${{ steps.review_pr.outputs.base_sha }}"
 
       - name: Keep refresh for review
         if: >-
