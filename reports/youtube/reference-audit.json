@@ -8,8 +8,8 @@
   "schema_version": 1,
   "sources": {
     "blackmatrix": {
-      "commit": "54abec88620d07187b1ba20ff06fdd8ed5b1f173",
-      "committed_at": "2026-08-21T18:35:15Z",
+      "commit": "f42be99379fcd1a1dd03469e8b56dcb46888fcea",
+      "committed_at": "2026-08-23T18:28:35Z",
       "domain_rules": 179,
       "entries_persisted": false,
       "exact_common_rules": 176,
@@ -26,8 +26,8 @@
       "requested_ref": "master"
     },
     "sukka": {
-      "commit": "f6cdc5c81edd0e50d6605b592fbf35a0f6716cc5",
-      "committed_at": "2026-08-22T19:55:44Z",
+      "commit": "47f5ea06d28b875ca21c59f1351309f506e4a342",
+      "committed_at": "2026-08-23T16:29:31Z",
       "covered_by_generated": 9,
       "domain_rules": 9,
       "entries_persisted": false,
