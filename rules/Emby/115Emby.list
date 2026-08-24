@@ -14,6 +14,7 @@ DOMAIN-SUFFIX,115dot.com
 DOMAIN-SUFFIX,anxia.com
 DOMAIN-SUFFIX,lightting.net
 DOMAIN,su.stluma.com
+DOMAIN,st.stluma.com
 #
 # ======== 精确 CDN 线路 ========
 DOMAIN,cdn.wenjian.de
