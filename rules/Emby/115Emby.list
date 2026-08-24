@@ -1,8 +1,8 @@
 # NAME: schmidttt's 115 Emby Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.08.23 00:31:47
-# TOTAL: 13
+# UPDATED: 2026.08.24 12:19:01
+# TOTAL: 14
 #
 # ======== 手工维护域名 ========
 DOMAIN-SUFFIX,115.cn
@@ -14,6 +14,7 @@ DOMAIN-SUFFIX,115dot.com
 DOMAIN-SUFFIX,anxia.com
 DOMAIN-SUFFIX,lightting.net
 DOMAIN,su.stluma.com
+DOMAIN,st.stluma.com
 #
 # ======== 精确 CDN 线路 ========
 DOMAIN,cdn.wenjian.de
