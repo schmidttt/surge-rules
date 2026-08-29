@@ -1,7 +1,7 @@
 {
   "blackmatrix": {
-    "commit": "65e8adff06ea66c81bc61ed64329dae4fbfa7438",
-    "committed_at": "2026-08-28T02:03:54Z",
+    "commit": "4d8ff0c3626db3fe46aef5f93e2aa6913d156d29",
+    "committed_at": "2026-08-29T20:21:15Z",
     "repository": "blackmatrix7/ios_rule_script",
     "requested_ref": "master"
   },
@@ -45,8 +45,8 @@
   },
   "schema_version": 2,
   "sukka": {
-    "commit": "28481dcd97c6423e143b2e1ed6181ddc079b291a",
-    "committed_at": "2026-08-28T13:04:21Z",
+    "commit": "1aff8494e5f20579236cddebe17a02772cd1e6ad",
+    "committed_at": "2026-08-29T20:42:29Z",
     "repository": "SukkaW/Surge",
     "requested_ref": "master"
   },
