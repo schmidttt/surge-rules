@@ -8,8 +8,8 @@
   "schema_version": 1,
   "sources": {
     "blackmatrix": {
-      "commit": "4112f8e7b3a9f23c9ccf381beaa5931a36df3781",
-      "committed_at": "2026-09-09T20:25:41Z",
+      "commit": "0087bb74e91b335e17a79fd07a8514277f7d77b4",
+      "committed_at": "2026-09-11T20:24:14Z",
       "domain_rules": 179,
       "entries_persisted": false,
       "exact_common_rules": 176,
