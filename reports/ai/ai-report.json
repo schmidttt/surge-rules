@@ -24,14 +24,14 @@
   "schema_version": 1,
   "source": {
     "sukka_audit": {
-      "commit": "e5cee19366d7b8d4bf31fc4efc1de717d0a2f597",
-      "committed_at": "2026-09-13T08:43:40Z",
+      "commit": "7d517da7bd7a44e5b3e3f016ef3c2edc151eb342",
+      "committed_at": "2026-09-14T15:53:24Z",
       "repository": "SukkaW/Surge",
       "requested_ref": "master"
     },
     "v2fly": {
-      "commit": "5d939545c84e2a534f8e85ba6ffb2b51fa18fb76",
-      "committed_at": "2026-09-08T09:39:45Z",
+      "commit": "6fe5416797ec88d29a3a1c69ce1431d73b955e88",
+      "committed_at": "2026-09-14T09:17:07Z",
       "repository": "v2fly/domain-list-community",
       "requested_ref": "master"
     }
