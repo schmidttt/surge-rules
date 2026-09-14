@@ -3,14 +3,14 @@
     "ads_tagged_in_source": 1,
     "exclude_patch": 0,
     "include_patch": 4,
-    "not_cn_tagged_in_source": 35,
-    "output": 40,
-    "source_expanded": 36,
-    "source_unique": 36
+    "not_cn_tagged_in_source": 36,
+    "output": 41,
+    "source_expanded": 37,
+    "source_unique": 37
   },
   "product": "TikTok",
   "safety": {
-    "actual_change_ratio": 0.0,
+    "actual_change_ratio": 0.025,
     "auto_merge_eligible": true,
     "blackmatrix_auto_merged": false,
     "formal_upstream": "v2fly/domain-list-community",
@@ -22,16 +22,16 @@
   "schema_version": 1,
   "unsupported_omitted": [],
   "v2fly": {
-    "commit": "5d939545c84e2a534f8e85ba6ffb2b51fa18fb76",
-    "committed_at": "2026-09-08T09:39:45Z",
+    "commit": "6fe5416797ec88d29a3a1c69ce1431d73b955e88",
+    "committed_at": "2026-09-14T09:17:07Z",
     "list": "tiktok",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
   "verification": {
-    "auto_resolved_count": 40,
+    "auto_resolved_count": 41,
     "automatic_decision_counts": {
-      "published": 40
+      "published": 41
     },
     "manual_review": [],
     "manual_review_count": 0,

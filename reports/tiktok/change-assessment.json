@@ -1,12 +1,14 @@
 {
-  "actual_change_count": 0,
-  "actual_change_ratio": 0.0,
-  "added": [],
-  "added_count": 0,
+  "actual_change_count": 1,
+  "actual_change_ratio": 0.025,
+  "added": [
+    "DOMAIN,p16-tiktok-dm-sticker-sign-sg.ibyteimg.com"
+  ],
+  "added_count": 1,
   "auto_merge_eligible": true,
   "baseline_rules": 40,
   "classification": "low-risk",
-  "generated_rules": 40,
+  "generated_rules": 41,
   "previous_reference_manual_review_count": 0,
   "previous_reference_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "product": "TikTok",
