@@ -10,7 +10,7 @@
   },
   "product": "TikTok",
   "safety": {
-    "actual_change_ratio": 0.025,
+    "actual_change_ratio": 0.0,
     "auto_merge_eligible": true,
     "blackmatrix_auto_merged": false,
     "formal_upstream": "v2fly/domain-list-community",
