@@ -24,8 +24,8 @@
   "schema_version": 1,
   "source": {
     "sukka_audit": {
-      "commit": "d8e78936d0c65860d5702a014ab48634c07d243c",
-      "committed_at": "2026-09-17T12:41:14Z",
+      "commit": "0e4b52b1faf3fdd71e3f6f6eb49d1d6dc724d399",
+      "committed_at": "2026-09-18T14:57:54Z",
       "repository": "SukkaW/Surge",
       "requested_ref": "master"
     },
