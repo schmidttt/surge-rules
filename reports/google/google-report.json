@@ -17,24 +17,24 @@
     "common_domain_rules": 613,
     "note": "Aggregate comparison only; BlackMatrix7 entries are neither merged nor persisted in this repository.",
     "only_blackmatrix_count": 72,
-    "only_v2fly_generated_count": 280
+    "only_v2fly_generated_count": 283
   },
   "counts": {
     "ads_tagged_in_source": 54,
     "cn_tagged_in_source": 126,
     "exclude_patch": 0,
-    "google_deepmind_unique": 41,
-    "google_expanded": 1114,
-    "google_unique": 1114,
+    "google_deepmind_unique": 43,
+    "google_expanded": 1119,
+    "google_unique": 1119,
     "include_patch": 0,
-    "main_output": 893,
-    "product_exact_excluded": 219,
+    "main_output": 896,
+    "product_exact_excluded": 221,
     "unsupported_regexp_omitted": 2,
     "youtube_unique": 178
   },
   "safety": {
-    "actual_change_ratio": 0.0,
-    "auto_merge_eligible": true,
+    "actual_change_ratio": 0.005599,
+    "auto_merge_eligible": false,
     "blackmatrix_auto_merged": false,
     "max_change_ratio": 0.1,
     "official_core_assertions_passed": true,
@@ -45,8 +45,8 @@
   },
   "schema_version": 2,
   "sukka": {
-    "commit": "e760825345d9b09c3259fc932f354a5d493d71b4",
-    "committed_at": "2026-09-19T11:27:58Z",
+    "commit": "9e2267373c589062441c6d733699270e1488952a",
+    "committed_at": "2026-09-20T10:42:27Z",
     "repository": "SukkaW/Surge",
     "requested_ref": "master"
   },
@@ -55,15 +55,15 @@
     "regexp:^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$"
   ],
   "v2fly": {
-    "commit": "6fe5416797ec88d29a3a1c69ce1431d73b955e88",
-    "committed_at": "2026-09-14T09:17:07Z",
+    "commit": "8dee9683b99554b777eecb54a894670af46db9b1",
+    "committed_at": "2026-09-20T13:37:00Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
   "verification": {
-    "auto_resolved_count": 893,
+    "auto_resolved_count": 896,
     "automatic_decision_counts": {
-      "published": 893
+      "published": 896
     },
     "manual_review": [
       {
