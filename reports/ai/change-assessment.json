@@ -1,11 +1,14 @@
 {
-  "actual_change_ratio": 0.0,
-  "added": [],
-  "added_count": 0,
+  "actual_change_ratio": 0.010989,
+  "added": [
+    "GoogleAI:DOMAIN-SUFFIX,flow.google.com",
+    "GoogleAI:DOMAIN-SUFFIX,notebook.google"
+  ],
+  "added_count": 2,
   "auto_merge_eligible": true,
   "baseline_rules": 182,
   "classification": "low-risk",
-  "generated_rules": 182,
+  "generated_rules": 184,
   "previous_sukka_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "previous_sukka_uncovered": 0,
   "reasons": [],
