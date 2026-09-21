@@ -1,26 +1,35 @@
 {
-  "actual_change_count": 0,
-  "actual_change_ratio": 0.0,
-  "added": [],
-  "added_count": 0,
-  "auto_merge_eligible": true,
+  "actual_change_count": 5,
+  "actual_change_ratio": 0.005599,
+  "added": [
+    "DOMAIN-SUFFIX,firebase.dev",
+    "DOMAIN-SUFFIX,firebase.google.com",
+    "DOMAIN,firebaseappdistribution.googleapis.com",
+    "DOMAIN,firebaseapptesters.googleapis.com"
+  ],
+  "added_count": 4,
+  "auto_merge_eligible": false,
   "baseline_rules": 893,
-  "classification": "low-risk",
-  "generated_rules": 893,
+  "classification": "high-risk",
+  "generated_rules": 896,
   "increased_reference_manual_review": {},
   "previous_reference_manual_review": {
     "manual_review": 12,
     "manual_review_fingerprint": "26bc009440f0cf5d43019b1d344e700fdb0ea6aed893299b15ca50c029576689"
   },
-  "reasons": [],
+  "reasons": [
+    "rules-removed"
+  ],
   "reference_manual_review": {
     "manual_review": 12,
     "manual_review_fingerprint": "26bc009440f0cf5d43019b1d344e700fdb0ea6aed893299b15ca50c029576689"
   },
   "reference_manual_review_set_changed": false,
-  "removed": [],
-  "removed_count": 0,
-  "risk_level": "low-risk",
+  "removed": [
+    "DOMAIN,firebase.google.com"
+  ],
+  "removed_count": 1,
+  "risk_level": "high-risk",
   "schema_version": 2,
   "thresholds": {
     "automatic_deletions_allowed": false,
