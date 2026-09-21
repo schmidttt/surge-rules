@@ -1,7 +1,7 @@
 {
   "blackmatrix": {
-    "commit": "cad7fe757016e20b7757be5ad9dd953eed9913d5",
-    "committed_at": "2026-09-19T19:59:42Z",
+    "commit": "51d2e1dd8429a91be575157d6f8ed051c93559f8",
+    "committed_at": "2026-09-21T21:38:01Z",
     "repository": "blackmatrix7/ios_rule_script",
     "requested_ref": "master"
   },
@@ -33,8 +33,8 @@
     "youtube_unique": 178
   },
   "safety": {
-    "actual_change_ratio": 0.005599,
-    "auto_merge_eligible": false,
+    "actual_change_ratio": 0.0,
+    "auto_merge_eligible": true,
     "blackmatrix_auto_merged": false,
     "max_change_ratio": 0.1,
     "official_core_assertions_passed": true,
@@ -45,8 +45,8 @@
   },
   "schema_version": 2,
   "sukka": {
-    "commit": "9e2267373c589062441c6d733699270e1488952a",
-    "committed_at": "2026-09-20T10:42:27Z",
+    "commit": "d7eb21c6f227faae9cae8bef1287f6071c3d1a62",
+    "committed_at": "2026-09-21T05:44:38Z",
     "repository": "SukkaW/Surge",
     "requested_ref": "master"
   },
