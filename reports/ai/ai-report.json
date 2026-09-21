@@ -5,11 +5,11 @@
     "ai_output": 140,
     "domestic_ai_reference": 115,
     "google_ai_exclude_patch": 0,
-    "google_ai_expanded": 41,
+    "google_ai_expanded": 43,
     "google_ai_include_patch": 1,
-    "google_ai_output": 42,
-    "google_partition_excluded": 41,
-    "overseas_ai_expanded": 180,
+    "google_ai_output": 44,
+    "google_partition_excluded": 43,
+    "overseas_ai_expanded": 182,
     "overseas_ai_unsupported": 1
   },
   "policy": {
@@ -24,14 +24,14 @@
   "schema_version": 1,
   "source": {
     "sukka_audit": {
-      "commit": "e760825345d9b09c3259fc932f354a5d493d71b4",
-      "committed_at": "2026-09-19T11:27:58Z",
+      "commit": "9e2267373c589062441c6d733699270e1488952a",
+      "committed_at": "2026-09-20T10:42:27Z",
       "repository": "SukkaW/Surge",
       "requested_ref": "master"
     },
     "v2fly": {
-      "commit": "6fe5416797ec88d29a3a1c69ce1431d73b955e88",
-      "committed_at": "2026-09-14T09:17:07Z",
+      "commit": "8dee9683b99554b777eecb54a894670af46db9b1",
+      "committed_at": "2026-09-20T13:37:00Z",
       "repository": "v2fly/domain-list-community",
       "requested_ref": "master"
     }
@@ -133,12 +133,12 @@
     }
   ],
   "verification": {
-    "auto_resolved_count": 223,
+    "auto_resolved_count": 227,
     "automatic_decision_counts": {
       "excluded-domestic-partition": 0,
-      "excluded-google-partition": 41,
+      "excluded-google-partition": 43,
       "published-ai": 140,
-      "published-googleai": 42
+      "published-googleai": 44
     },
     "manual_review": [
       {
