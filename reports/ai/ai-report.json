@@ -2,14 +2,14 @@
   "counts": {
     "ai_exclude_patch": 0,
     "ai_include_patch": 2,
-    "ai_output": 140,
+    "ai_output": 143,
     "domestic_ai_reference": 115,
     "google_ai_exclude_patch": 0,
-    "google_ai_expanded": 43,
+    "google_ai_expanded": 46,
     "google_ai_include_patch": 1,
-    "google_ai_output": 44,
-    "google_partition_excluded": 43,
-    "overseas_ai_expanded": 182,
+    "google_ai_output": 47,
+    "google_partition_excluded": 46,
+    "overseas_ai_expanded": 188,
     "overseas_ai_unsupported": 1
   },
   "policy": {
@@ -30,8 +30,8 @@
       "requested_ref": "master"
     },
     "v2fly": {
-      "commit": "bcea25493ed28c387660fe49ce1ceb242d2efca0",
-      "committed_at": "2026-09-25T23:42:05Z",
+      "commit": "2d71342eea1720da57261b55663c9d55619e9b1c",
+      "committed_at": "2026-09-29T14:36:15Z",
       "repository": "v2fly/domain-list-community",
       "requested_ref": "master"
     }
@@ -133,12 +133,12 @@
     }
   ],
   "verification": {
-    "auto_resolved_count": 227,
+    "auto_resolved_count": 236,
     "automatic_decision_counts": {
       "excluded-domestic-partition": 0,
-      "excluded-google-partition": 43,
-      "published-ai": 140,
-      "published-googleai": 44
+      "excluded-google-partition": 46,
+      "published-ai": 143,
+      "published-googleai": 47
     },
     "manual_review": [
       {
