@@ -1,7 +1,7 @@
 {
   "blackmatrix": {
-    "commit": "5c22b5056f6288c27935489f74f8681fadbdba87",
-    "committed_at": "2026-09-27T20:46:57Z",
+    "commit": "c9b2158695596a1ba866adcf74def8d5ab348e25",
+    "committed_at": "2026-09-29T21:50:19Z",
     "repository": "blackmatrix7/ios_rule_script",
     "requested_ref": "master"
   },
@@ -23,12 +23,12 @@
     "ads_tagged_in_source": 54,
     "cn_tagged_in_source": 126,
     "exclude_patch": 0,
-    "google_deepmind_unique": 43,
-    "google_expanded": 1119,
-    "google_unique": 1119,
+    "google_deepmind_unique": 46,
+    "google_expanded": 1122,
+    "google_unique": 1122,
     "include_patch": 0,
     "main_output": 896,
-    "product_exact_excluded": 221,
+    "product_exact_excluded": 224,
     "unsupported_regexp_omitted": 2,
     "youtube_unique": 178
   },
@@ -55,8 +55,8 @@
     "regexp:^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$"
   ],
   "v2fly": {
-    "commit": "bcea25493ed28c387660fe49ce1ceb242d2efca0",
-    "committed_at": "2026-09-25T23:42:05Z",
+    "commit": "2d71342eea1720da57261b55663c9d55619e9b1c",
+    "committed_at": "2026-09-29T14:36:15Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
