@@ -1,16 +1,9 @@
 {
-  "actual_change_ratio": 0.032609,
-  "added": [
-    "AI:DOMAIN-SUFFIX,metaaivm.com",
-    "AI:DOMAIN-SUFFIX,muse.ai",
-    "AI:DOMAIN-SUFFIX,opencode.ai",
-    "GoogleAI:DOMAIN-SUFFIX,labstailwind.pa.googleapis.com",
-    "GoogleAI:DOMAIN,geminiweb-pa.clients.google.com",
-    "GoogleAI:DOMAIN,geminiweb-pa.clients6.google.com"
-  ],
-  "added_count": 6,
+  "actual_change_ratio": 0.0,
+  "added": [],
+  "added_count": 0,
   "auto_merge_eligible": true,
-  "baseline_rules": 184,
+  "baseline_rules": 190,
   "classification": "low-risk",
   "generated_rules": 190,
   "previous_sukka_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
