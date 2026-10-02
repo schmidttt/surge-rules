@@ -18,8 +18,8 @@
   },
   "schema_version": 3,
   "sukka": {
-    "commit": "219a9e0c77843bd0961c066257f0ee318d26a6e8",
-    "committed_at": "2026-10-01T14:48:24Z",
+    "commit": "f04a875de2cdcf443e4f11366490d24544e9e0b3",
+    "committed_at": "2026-10-02T11:36:54Z",
     "global_google": {
       "counts": {
         "google_ai": 1,
