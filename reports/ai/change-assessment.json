@@ -1,11 +1,13 @@
 {
-  "actual_change_ratio": 0.0,
-  "added": [],
-  "added_count": 0,
+  "actual_change_ratio": 0.005263,
+  "added": [
+    "AI:DOMAIN-SUFFIX,claude.dev"
+  ],
+  "added_count": 1,
   "auto_merge_eligible": true,
   "baseline_rules": 190,
   "classification": "low-risk",
-  "generated_rules": 190,
+  "generated_rules": 191,
   "previous_sukka_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "previous_sukka_uncovered": 0,
   "reasons": [],
