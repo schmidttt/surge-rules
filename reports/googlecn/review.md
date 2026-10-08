@@ -1,6 +1,6 @@
 # GoogleCN 自动审查报告
 
-- v2fly 提交：`63777333b7dd1ac57f790e466c0f6a647b9c7281`
+- v2fly 提交：`88305e9df237d81de4d879db17ba535a54be5e14`
 - 自动结论：`low-risk`
 - 已批准：35 条
 - 自动排除：69 条
