@@ -18,7 +18,7 @@ BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本�
 | BiliBili | BiliBili 专用策略 | [`rules/BiliBili/BiliBili.list`](rules/BiliBili/BiliBili.list) |
 | Game | Epic、PlayStation、Steam、Nintendo 的海外/通用入口 | [`rules/Game/Game.list`](rules/Game/Game.list) |
 | GameCN | 上述游戏平台的中国大陆入口 | [`rules/GameCN/GameCN.list`](rules/GameCN/GameCN.list) |
-| 115Emby | 手工维护的 115 Emby 服务域名 | [`rules/Emby/115Emby.list`](rules/Emby/115Emby.list) |
+| 115Emby | 手工维护的 115 Emby 服务域名与服务器 IP | [`rules/Emby/115Emby.list`](rules/Emby/115Emby.list) |
 
 ## Surge 推荐顺序
 
@@ -111,8 +111,9 @@ Surge 中必须先引用 GameCN。
 - YouTube、TikTok、BiliBili 分别独立生成和审计。
 - BiliBili 同时包含大陆及国际版域名，日常可选择 `DIRECT`，需要时整体
   切换香港或台湾入口。
-- 115Emby 为手工维护列表，包含 115 Emby 服务所需域名；应在
-  其他国际流媒体与兜底规则之前引用。
+- 115Emby 为手工维护列表，包含 115 Emby 服务所需域名与服务器 IP；
+  IPv4 地址仅接受精确的 `IP-CIDR,地址/32,no-resolve`，不包含端口或整段网段。
+  应在其他国际流媒体与兜底规则之前引用。
 - Sukka stream 继续处理其他国际流媒体。
 - 本仓库不生成 DomesticMedia，不建议再引用 BlackMatrix7 ChinaMedia。
   国内站点由专用规则、Sukka domestic、China IP 与 GEOIP CN 接管；

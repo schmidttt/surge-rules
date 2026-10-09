@@ -1,8 +1,8 @@
 # NAME: schmidttt's 115 Emby Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.09.03 12:29:49
-# TOTAL: 18
+# UPDATED: 2026.10.09 15:09:31
+# TOTAL: 21
 #
 # ======== 手工维护域名 ========
 DOMAIN-SUFFIX,115.cn
@@ -25,3 +25,11 @@ DOMAIN,cdn.wenjian.de
 DOMAIN,1.cdn.wenjian.de
 DOMAIN,2.cdn.wenjian.de
 DOMAIN,3.cdn.wenjian.de
+#
+# ======== 精确服务器 IP ========
+# 主服务器
+IP-CIDR,124.220.4.209/32,no-resolve
+# 备服务器
+IP-CIDR,103.236.87.120/32,no-resolve
+# 上传 ck
+IP-CIDR,43.139.81.251/32,no-resolve

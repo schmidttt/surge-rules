@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import ipaddress
 import json
 import re
 import sys
@@ -86,6 +87,20 @@ def validate_list(path: Path, minimum: int) -> Tuple[int, List[str]]:
         if rule_type in {"DOMAIN", "DOMAIN-SUFFIX"}:
             if len(parts) != 2 or not parts[1] or parts[1] != parts[1].lower():
                 raise ValidationError("{} has invalid domain rule {!r}".format(path, line))
+            continue
+        if rule_type == "IP-CIDR" and path.parts[-3:] == (
+            "rules", "Emby", "115Emby.list"
+        ):
+            if len(parts) != 3 or parts[2] != "no-resolve":
+                raise ValidationError("{} has invalid IPv4 host rule {!r}".format(path, line))
+            try:
+                network = ipaddress.IPv4Network(parts[1], strict=True)
+            except ValueError as exc:
+                raise ValidationError(
+                    "{} has invalid IPv4 host rule {!r}".format(path, line)
+                ) from exc
+            if network.prefixlen != 32 or str(network) != parts[1]:
+                raise ValidationError("{} has invalid IPv4 host rule {!r}".format(path, line))
             continue
         raise ValidationError("{} has invalid rule {!r}".format(path, line))
     return len(rules), rules
