@@ -1,7 +1,7 @@
 {
   "blackmatrix": {
-    "commit": "036c097eb26c6a52c4f04ebcb6633043cb942669",
-    "committed_at": "2026-10-07T22:34:57Z",
+    "commit": "83f37120c155f67c8eef43221dabe15cc3c95fec",
+    "committed_at": "2026-10-09T22:09:47Z",
     "repository": "blackmatrix7/ios_rule_script",
     "requested_ref": "master"
   },
@@ -55,8 +55,8 @@
     "regexp:^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$"
   ],
   "v2fly": {
-    "commit": "e84921279c9142434b43cb84ec6c17f987e025df",
-    "committed_at": "2026-10-08T09:30:42Z",
+    "commit": "c6adacf29cc4fb05e04651fcf03e00989ef9f797",
+    "committed_at": "2026-10-09T10:11:47Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
