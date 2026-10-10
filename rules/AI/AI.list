@@ -1,8 +1,8 @@
 # NAME: schmidttt's AI Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.10.08 17:30:42
-# TOTAL: 144
+# UPDATED: 2026.10.09 18:11:47
+# TOTAL: 145
 #
 # ======== 上游同步规则 ========
 DOMAIN,ai.com
@@ -137,6 +137,7 @@ DOMAIN-SUFFIX,qoder.com
 DOMAIN-SUFFIX,sider.ai
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,spicywriter.com
+DOMAIN-SUFFIX,syntx.ai
 DOMAIN-SUFFIX,talkai.info
 DOMAIN-SUFFIX,tapnow.ai
 DOMAIN-SUFFIX,themeforest.net
