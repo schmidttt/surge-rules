@@ -81,6 +81,8 @@ def validate_list(path: Path, minimum: int) -> Tuple[int, List[str]]:
         raise ValidationError("{} has an invalid TOTAL header".format(path))
     if len(rules) != len(set(rules)):
         raise ValidationError("{} contains duplicate rules".format(path))
+    is_emby_list = path.parts[-3:] == ("rules", "Emby", "115Emby.list")
+    port_limited_domains = set()
     for line in rules:
         parts = line.split(",")
         rule_type = parts[0]
@@ -88,9 +90,28 @@ def validate_list(path: Path, minimum: int) -> Tuple[int, List[str]]:
             if len(parts) != 2 or not parts[1] or parts[1] != parts[1].lower():
                 raise ValidationError("{} has invalid domain rule {!r}".format(path, line))
             continue
-        if rule_type == "IP-CIDR" and path.parts[-3:] == (
-            "rules", "Emby", "115Emby.list"
-        ):
+        if rule_type == "AND" and is_emby_list:
+            match = re.fullmatch(
+                r"AND,\(\(DOMAIN,([^,()]+)\),\(DEST-PORT,([1-9][0-9]{0,4})\)\)",
+                line,
+            )
+            if match is None:
+                raise ValidationError("{} has invalid domain/port rule {!r}".format(path, line))
+            domain, port = match.groups()
+            labels = domain.split(".")
+            if (
+                len(domain) > 253
+                or len(labels) < 2
+                or not all(
+                    re.fullmatch(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?", label)
+                    for label in labels
+                )
+                or int(port) > 65535
+            ):
+                raise ValidationError("{} has invalid domain/port rule {!r}".format(path, line))
+            port_limited_domains.add(domain)
+            continue
+        if rule_type == "IP-CIDR" and is_emby_list:
             if len(parts) != 3 or parts[2] != "no-resolve":
                 raise ValidationError("{} has invalid IPv4 host rule {!r}".format(path, line))
             try:
@@ -103,6 +124,16 @@ def validate_list(path: Path, minimum: int) -> Tuple[int, List[str]]:
                 raise ValidationError("{} has invalid IPv4 host rule {!r}".format(path, line))
             continue
         raise ValidationError("{} has invalid rule {!r}".format(path, line))
+    for domain in sorted(port_limited_domains):
+        for rule in rules:
+            if rule.startswith("DOMAIN,") and rule.split(",", 1)[1] == domain:
+                raise ValidationError("{} has unrestricted coverage for {}".format(path, domain))
+            if rule.startswith("DOMAIN-SUFFIX,"):
+                suffix = rule.split(",", 1)[1]
+                if domain == suffix or domain.endswith("." + suffix):
+                    raise ValidationError(
+                        "{} has unrestricted coverage for {}".format(path, domain)
+                    )
     return len(rules), rules
 
 
