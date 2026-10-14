@@ -86,6 +86,7 @@ class RepositoryListValidationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             for relative in (
                 "rules/Google/Google.list",
+                "rules/Emby/Emby.list",
                 "rules/Other/115Emby.list",
                 "115Emby.list",
             ):
@@ -96,6 +97,17 @@ class RepositoryListValidationTests(unittest.TestCase):
                     )
                     with self.assertRaises(ValidationError):
                         validate_list(path, 1)
+
+    def test_proxy_emby_accepts_exact_host_and_port(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            expected = [
+                "AND,((DOMAIN,er8mm.mobaiemby.site),(DEST-PORT,80))",
+                "DOMAIN,emby101.origamiart.uk",
+            ]
+            path = self.write_list(
+                Path(temporary), "rules/Emby/Emby.list", expected
+            )
+            self.assertEqual(validate_list(path, 2), (2, expected))
 
     def test_115_emby_accepts_exact_domain_and_port(self):
         with tempfile.TemporaryDirectory() as temporary:

@@ -31,6 +31,7 @@ EXPECTED_LISTS = {
     "rules/Game/Game.list": 150,
     "rules/GameCN/GameCN.list": 20,
     "rules/Emby/115Emby.list": 13,
+    "rules/Emby/Emby.list": 2,
 }
 EXPECTED_VERIFICATION_REPORTS = (
     "reports/google/google-report.json",
@@ -82,6 +83,9 @@ def validate_list(path: Path, minimum: int) -> Tuple[int, List[str]]:
     if len(rules) != len(set(rules)):
         raise ValidationError("{} contains duplicate rules".format(path))
     is_emby_list = path.parts[-3:] == ("rules", "Emby", "115Emby.list")
+    is_emby_domain_port_list = is_emby_list or path.parts[-3:] == (
+        "rules", "Emby", "Emby.list"
+    )
     port_limited_domains = set()
     for line in rules:
         parts = line.split(",")
@@ -90,7 +94,7 @@ def validate_list(path: Path, minimum: int) -> Tuple[int, List[str]]:
             if len(parts) != 2 or not parts[1] or parts[1] != parts[1].lower():
                 raise ValidationError("{} has invalid domain rule {!r}".format(path, line))
             continue
-        if rule_type == "AND" and is_emby_list:
+        if rule_type == "AND" and is_emby_domain_port_list:
             match = re.fullmatch(
                 r"AND,\(\(DOMAIN,([^,()]+)\),\(DEST-PORT,([1-9][0-9]{0,4})\)\)",
                 line,

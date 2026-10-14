@@ -2,10 +2,10 @@
 
 为 Surge 构建可审核、可回退、按策略目标拆分的个人规则库。自动生成的
 正式产物以 `v2fly/domain-list-community` 为唯一上游；Sukka 与
-BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本仓库。115 Emby
-规则表由仓库所有者手工维护。
+BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本仓库。115Emby
+直连表与 Emby 代理表由仓库所有者手工维护。
 
-当前公开十张规则表：
+当前公开十一张规则表：
 
 | 规则 | 策略目标 | 正式产物 |
 |---|---|---|
@@ -19,6 +19,7 @@ BlackMatrix7 只用于覆盖审计，不会把第三方成品表直接混入本�
 | Game | Epic、PlayStation、Steam、Nintendo 的海外/通用入口 | [`rules/Game/Game.list`](rules/Game/Game.list) |
 | GameCN | 上述游戏平台的中国大陆入口 | [`rules/GameCN/GameCN.list`](rules/GameCN/GameCN.list) |
 | 115Emby | 手工维护的 115 Emby 服务域名与服务器 IP | [`rules/Emby/115Emby.list`](rules/Emby/115Emby.list) |
+| Emby | 手工维护的代理 Emby 入口，独立手动选线 | [`rules/Emby/Emby.list`](rules/Emby/Emby.list) |
 
 ## Surge 推荐顺序
 
@@ -41,7 +42,8 @@ RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Game
 
 RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/TikTok/TikTok.list,📱 TikTok,...
 RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/BiliBili/BiliBili.list,📺 BiliBili,...
-RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/115Emby.list,🎞️ Emby,no-resolve,extended-matching
+RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/Emby.list,📺 Emby,no-resolve,extended-matching
+RULE-SET,https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/115Emby.list,DIRECT,no-resolve,extended-matching
 RULE-SET,https://ruleset.skk.moe/List/non_ip/stream.conf,🎬 Streaming,...
 ```
 
@@ -111,14 +113,17 @@ Surge 中必须先引用 GameCN。
 - YouTube、TikTok、BiliBili 分别独立生成和审计。
 - BiliBili 同时包含大陆及国际版域名，日常可选择 `DIRECT`，需要时整体
   切换香港或台湾入口。
-- 115Emby 为手工维护列表，包含 115 Emby 服务所需域名与服务器 IP；
+- 115Emby 为手工维护的直连列表，固定指向 `DIRECT`，包含服务所需域名与服务器 IP；
   IPv4 地址仅接受精确的 `IP-CIDR,地址/32,no-resolve`，不包含端口或整段网段。
   需要区分同一域名的不同端口时，可使用
   `AND,((DOMAIN,域名),(DEST-PORT,端口))`，端口必须是 1–65535 的单个整数。
   同一域名不得同时保留不限定端口的域名规则或覆盖它的后缀规则。
-  `er8mm.mobaiemby.site` 仅收录 CF 的 443 端口；80 端口继续匹配后续规则，
-  不保证自动直连。列表里的所有匹配项仍使用引用该列表时指定的策略。
-  应在其他国际流媒体与兜底规则之前引用。
+  `er8mm.mobaiemby.site` 仅收录 CF 的 443 端口。
+- Emby 为手工维护的代理列表，指向独立的手动策略组；示例中的
+  `📺 Emby` 应与配置中的完整策略组名称一致。目前 Mobai 的 HTTP/80 走代理，
+  HTTPS/443 保留直连；其他入口优先使用精确主机，避免扩大到父域名。
+  两张表都应早于其他国际流媒体、下载、CDN 与国内/最终兜底规则，
+  代理表放在直连表之前。播放跳转到其他主机后，按新主机重新匹配规则。
 - Sukka stream 继续处理其他国际流媒体。
 - 本仓库不生成 DomesticMedia，不建议再引用 BlackMatrix7 ChinaMedia。
   国内站点由专用规则、Sukka domestic、China IP 与 GEOIP CN 接管；
@@ -193,7 +198,9 @@ surge-rules/
 │   ├── BiliBili/BiliBili.list
 │   ├── Game/Game.list
 │   ├── GameCN/GameCN.list
-│   └── Emby/115Emby.list
+│   └── Emby/
+│       ├── 115Emby.list
+│       └── Emby.list
 ├── scripts/
 │   ├── shared/v2fly.py
 │   ├── shared/reference_verifier.py
@@ -244,6 +251,7 @@ https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/BiliBili/Bili
 https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Game/Game.list
 https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/GameCN/GameCN.list
 https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/115Emby.list
+https://raw.githubusercontent.com/schmidttt/surge-rules/main/rules/Emby/Emby.list
 ```
 
 ## 许可
