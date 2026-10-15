@@ -1,11 +1,12 @@
 # NAME: schmidttt's Emby Proxy Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.10.15 11:05:14
-# TOTAL: 3
+# UPDATED: 2026.10.15 12:07:59
+# TOTAL: 4
 #
 # 手工维护的代理 Emby 入口；配合独立的 Emby 手动策略组。
 # 非 CF 线路：仅 HTTP/80；同域名的 HTTPS/443 保留在 115Emby.list 直连。
+AND,((DOMAIN,er8mm.mobaiemby.site),(DEST-PORT,80))
 AND,((DOMAIN,fw1csvwe.mobaiemby.site),(DEST-PORT,80))
 # 主线路：精确主机匹配，不扩大到 origamiart.uk 的其他服务。
 DOMAIN,emby101.origamiart.uk
