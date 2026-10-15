@@ -2,7 +2,7 @@
   "counts": {
     "game_exclude_patch": 0,
     "game_include_patch": 0,
-    "game_output": 188,
+    "game_output": 189,
     "gamecn_covered_by_game_parent_count": 1,
     "gamecn_exclude_patch": 0,
     "gamecn_include_patch": 0,
@@ -23,7 +23,7 @@
       "expanded": 124
     },
     "playstation": {
-      "expanded": 4,
+      "expanded": 5,
       "single_label_omitted": 1
     },
     "steam": {
@@ -49,8 +49,8 @@
   },
   "schema_version": 1,
   "source": {
-    "commit": "c6adacf29cc4fb05e04651fcf03e00989ef9f797",
-    "committed_at": "2026-10-09T10:11:47Z",
+    "commit": "dd4e3c080cee602512768e8109f89fafaa94b8ca",
+    "committed_at": "2026-10-15T07:44:49Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
@@ -77,9 +77,9 @@
     }
   ],
   "verification": {
-    "auto_resolved_count": 218,
+    "auto_resolved_count": 219,
     "automatic_decision_counts": {
-      "published-game": 188,
+      "published-game": 189,
       "published-gamecn": 29,
       "resolved-by-rule-order": 1
     },
