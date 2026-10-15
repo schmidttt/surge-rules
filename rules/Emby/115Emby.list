@@ -1,8 +1,8 @@
 # NAME: schmidttt's 115 Emby Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.10.15 11:05:14
-# TOTAL: 30
+# UPDATED: 2026.10.15 12:07:59
+# TOTAL: 31
 #
 # ======== 手工维护域名 ========
 DOMAIN-SUFFIX,115.cn
@@ -26,6 +26,7 @@ DOMAIN,dmit2.origamiart.uk
 DOMAIN,dmit.origamiart.uk
 DOMAIN,sjc.origamiart.uk
 DOMAIN,dee.origamiart.uk
+AND,((DOMAIN,er8mm.mobaiemby.site),(DEST-PORT,443))
 AND,((DOMAIN,fw1csvwe.mobaiemby.site),(DEST-PORT,443))
 #
 # ======== 精确 CDN 线路 ========
