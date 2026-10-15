@@ -1,8 +1,8 @@
 # NAME: schmidttt's Game Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.10.09 18:11:47
-# TOTAL: 188
+# UPDATED: 2026.10.15 15:44:49
+# TOTAL: 189
 #
 # ======== 上游同步规则 ========
 DOMAIN,a4e8s8k3.map2.ssl.hwcdn.net
@@ -112,6 +112,7 @@ DOMAIN-SUFFIX,playnintendo.com
 DOMAIN-SUFFIX,playparagon.com
 DOMAIN-SUFFIX,playstation.com
 DOMAIN-SUFFIX,playstation.net
+DOMAIN-SUFFIX,playstationnetwork.com
 DOMAIN-SUFFIX,pokedex3d.com
 DOMAIN-SUFFIX,pokemon-moon.com
 DOMAIN-SUFFIX,pokemon-sun.com
