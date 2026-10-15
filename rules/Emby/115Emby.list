@@ -26,7 +26,7 @@ DOMAIN,dmit2.origamiart.uk
 DOMAIN,dmit.origamiart.uk
 DOMAIN,sjc.origamiart.uk
 DOMAIN,dee.origamiart.uk
-AND,((DOMAIN,er8mm.mobaiemby.site),(DEST-PORT,443))
+AND,((DOMAIN,fw1csvwe.mobaiemby.site),(DEST-PORT,443))
 #
 # ======== 精确 CDN 线路 ========
 DOMAIN,cdn.wenjian.de
