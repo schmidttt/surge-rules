@@ -45,8 +45,8 @@
   },
   "schema_version": 2,
   "sukka": {
-    "commit": "f588a7f03d5e8c34c26971080b59d719e1ed89fd",
-    "committed_at": "2026-10-15T09:43:52Z",
+    "commit": "5974bf6e75a5a8bec367dd138d052a190caab79d",
+    "committed_at": "2026-10-16T09:23:55Z",
     "repository": "SukkaW/Surge",
     "requested_ref": "master"
   },
