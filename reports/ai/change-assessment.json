@@ -1,13 +1,9 @@
 {
-  "actual_change_ratio": 0.015625,
-  "added": [
-    "AI:DOMAIN-SUFFIX,cursorvm.com",
-    "AI:DOMAIN-SUFFIX,openai.org",
-    "AI:DOMAIN-SUFFIX,typesafe.ai"
-  ],
-  "added_count": 3,
+  "actual_change_ratio": 0.0,
+  "added": [],
+  "added_count": 0,
   "auto_merge_eligible": true,
-  "baseline_rules": 192,
+  "baseline_rules": 195,
   "classification": "low-risk",
   "generated_rules": 195,
   "previous_sukka_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
