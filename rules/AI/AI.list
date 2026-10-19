@@ -1,8 +1,8 @@
 # NAME: schmidttt's AI Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.10.18 20:37:38
-# TOTAL: 148
+# UPDATED: 2026.10.19 15:44:43
+# TOTAL: 149
 #
 # ======== 上游同步规则 ========
 DOMAIN,ai.com
@@ -103,6 +103,7 @@ DOMAIN-SUFFIX,liveperson.net
 DOMAIN-SUFFIX,lmstudio.ai
 DOMAIN-SUFFIX,lovart.ai
 DOMAIN-SUFFIX,lpsnmedia.net
+DOMAIN-SUFFIX,magnific.com
 DOMAIN-SUFFIX,manus.im
 DOMAIN-SUFFIX,manuscdn.com
 DOMAIN-SUFFIX,marscode.com
