@@ -1,8 +1,8 @@
 # NAME: schmidttt's 115 Emby Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.10.15 12:07:59
-# TOTAL: 31
+# UPDATED: 2026.10.20 14:38:06
+# TOTAL: 32
 #
 # ======== 手工维护域名 ========
 DOMAIN-SUFFIX,115.cn
@@ -21,6 +21,7 @@ DOMAIN,emby.yusen.us.ci
 DOMAIN,embya.yusen.cyou
 DOMAIN,emby.yusen.cc.cd
 DOMAIN,yd.emby.syemby.com
+DOMAIN,pro.emby.syemby.com
 DOMAIN,aiyun.origamiart.uk
 DOMAIN,dmit2.origamiart.uk
 DOMAIN,dmit.origamiart.uk
