@@ -1,6 +1,6 @@
 # Game / GameCN 自动审查报告
 
-- v2fly 提交：`497bef95124ac98a70ed865bb8aaaa8e9a4ff66e`
+- v2fly 提交：`e8f6d1e5c4a01cda943c0784ffa834340eeab5ae`
 - 自动结论：`low-risk`
 - `Game.list`：189 条
 - `GameCN.list`：29 条
