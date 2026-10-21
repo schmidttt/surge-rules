@@ -1,8 +1,8 @@
 # NAME: schmidttt's AI Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.10.20 21:59:27
-# TOTAL: 149
+# UPDATED: 2026.10.21 09:12:38
+# TOTAL: 160
 #
 # ======== 上游同步规则 ========
 DOMAIN,ai.com
@@ -14,6 +14,7 @@ DOMAIN,copilot-telemetry.githubusercontent.com
 DOMAIN,copilot-workspace.githubnext.com
 DOMAIN,copilotprodattachments.blob.core.windows.net
 DOMAIN,o33249.ingest.sentry.io
+DOMAIN,o33249.ingest.us.sentry.io
 DOMAIN,openai.qualtrics.com
 DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,openaiassets.blob.core.windows.net
@@ -25,11 +26,15 @@ DOMAIN,pplx-res.cloudinary.com
 DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN-SUFFIX,agentclientprotocol.com
+DOMAIN-SUFFIX,ant.dev
 DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,anthropic.team
+DOMAIN-SUFFIX,antspace.dev
 DOMAIN-SUFFIX,anythingllm.com
 DOMAIN-SUFFIX,arena.ai
 DOMAIN-SUFFIX,cerebras.ai
 DOMAIN-SUFFIX,chat.com
+DOMAIN-SUFFIX,chatbotclaude.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-SUFFIX,chatgpt.site
@@ -39,10 +44,16 @@ DOMAIN-SUFFIX,ciciai.com
 DOMAIN-SUFFIX,ciciaicdn.com
 DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.app
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,claude.dev
+DOMAIN-SUFFIX,claude.new
+DOMAIN-SUFFIX,claude.site
+DOMAIN-SUFFIX,claudeacademy.com
 DOMAIN-SUFFIX,claudemcpclient.com
 DOMAIN-SUFFIX,claudemcpcontent.com
+DOMAIN-SUFFIX,claudepages.dev
+DOMAIN-SUFFIX,claudestudio.com
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,clawhub.ai
 DOMAIN-SUFFIX,clipdrop.co
