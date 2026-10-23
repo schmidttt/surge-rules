@@ -1,7 +1,7 @@
 # GoogleAI / AI 自动审查报告
 
-- v2fly 提交：`5b6a77d14fb904a1255f02e2e1b2bcc36ed31f83`
-- Sukka 对照提交：`ce425491ed5ac4b3904fee36403a84c026722120`
+- v2fly 提交：`597956ad5d1c063d80329d58a6aaadf6dcec43a7`
+- Sukka 对照提交：`3602ce516b866ff9b56d4e4dd1dca62b0ca90c33`
 - 自动结论：`low-risk`
 - `GoogleAI.list`：47 条
 - `AI.list`：160 条
