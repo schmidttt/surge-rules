@@ -1,11 +1,9 @@
 {
-  "actual_change_ratio": 0.004587,
-  "added": [
-    "Game:DOMAIN-SUFFIX,steamos.cloud"
-  ],
-  "added_count": 1,
+  "actual_change_ratio": 0.0,
+  "added": [],
+  "added_count": 0,
   "auto_merge_eligible": true,
-  "baseline_rules": 218,
+  "baseline_rules": 219,
   "classification": "low-risk",
   "generated_rules": 219,
   "reasons": [],
