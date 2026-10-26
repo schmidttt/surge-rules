@@ -23,12 +23,12 @@
     "ads_tagged_in_source": 54,
     "cn_tagged_in_source": 126,
     "exclude_patch": 0,
-    "google_deepmind_unique": 46,
-    "google_expanded": 1122,
-    "google_unique": 1122,
+    "google_deepmind_unique": 49,
+    "google_expanded": 1125,
+    "google_unique": 1125,
     "include_patch": 0,
     "main_output": 896,
-    "product_exact_excluded": 224,
+    "product_exact_excluded": 227,
     "unsupported_regexp_omitted": 2,
     "youtube_unique": 178
   },
@@ -45,8 +45,8 @@
   },
   "schema_version": 2,
   "sukka": {
-    "commit": "0716917d9e634af7ee9227439f9be9768fc8f6de",
-    "committed_at": "2026-10-25T14:57:36Z",
+    "commit": "4d3fd8fed137159305427af377349b3c52664315",
+    "committed_at": "2026-10-26T16:05:38Z",
     "repository": "SukkaW/Surge",
     "requested_ref": "master"
   },
@@ -55,8 +55,8 @@
     "regexp:^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$"
   ],
   "v2fly": {
-    "commit": "664598567e92d797bea11bb83cf939d1f37e9512",
-    "committed_at": "2026-10-25T01:44:41Z",
+    "commit": "fa3cb96fbc210b8d6466251a1d71b4a6e63a9c85",
+    "committed_at": "2026-10-26T10:26:50Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
