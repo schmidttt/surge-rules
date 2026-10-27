@@ -1,8 +1,8 @@
 # NAME: schmidttt's AI Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.10.26 18:26:50
-# TOTAL: 160
+# UPDATED: 2026.10.27 15:06:15
+# TOTAL: 166
 #
 # ======== 上游同步规则 ========
 DOMAIN,ai.com
@@ -32,6 +32,7 @@ DOMAIN-SUFFIX,anthropic.team
 DOMAIN-SUFFIX,antspace.dev
 DOMAIN-SUFFIX,anythingllm.com
 DOMAIN-SUFFIX,arena.ai
+DOMAIN-SUFFIX,artificialanalysis.ai
 DOMAIN-SUFFIX,cerebras.ai
 DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,chatbotclaude.com
@@ -56,6 +57,7 @@ DOMAIN-SUFFIX,claudepages.dev
 DOMAIN-SUFFIX,claudestudio.com
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,clawhub.ai
+DOMAIN-SUFFIX,cline.bot
 DOMAIN-SUFFIX,clipdrop.co
 DOMAIN-SUFFIX,codeium.com
 DOMAIN-SUFFIX,codeiumdata.com
@@ -66,6 +68,8 @@ DOMAIN-SUFFIX,cohere.com
 DOMAIN-SUFFIX,comfy.org
 DOMAIN-SUFFIX,comfyci.org
 DOMAIN-SUFFIX,comfyregistry.org
+DOMAIN-SUFFIX,commandcode.ai
+DOMAIN-SUFFIX,context7.com
 DOMAIN-SUFFIX,copilot-stg.com
 DOMAIN-SUFFIX,copilot.cloud.microsoft
 DOMAIN-SUFFIX,copilot.com
@@ -119,6 +123,7 @@ DOMAIN-SUFFIX,manus.im
 DOMAIN-SUFFIX,manuscdn.com
 DOMAIN-SUFFIX,marscode.com
 DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,metaaiusercontent.com
 DOMAIN-SUFFIX,metaaivm.com
 DOMAIN-SUFFIX,midjourney.com
 DOMAIN-SUFFIX,minimax.io
@@ -127,6 +132,7 @@ DOMAIN-SUFFIX,moonshot.ai
 DOMAIN-SUFFIX,mozilla.ai
 DOMAIN-SUFFIX,muse.ai
 DOMAIN-SUFFIX,notegpt.io
+DOMAIN-SUFFIX,nousresearch.com
 DOMAIN-SUFFIX,novelai.net
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaistatsig.com

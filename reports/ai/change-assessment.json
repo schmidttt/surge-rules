@@ -1,15 +1,18 @@
 {
-  "actual_change_ratio": 0.014493,
+  "actual_change_ratio": 0.028571,
   "added": [
-    "GoogleAI:DOMAIN,appsgenaiserver-pa.clients.google.com",
-    "GoogleAI:DOMAIN,appsgenaiserver-pa.clients6.google.com",
-    "GoogleAI:DOMAIN,appsgenaiserver-pa.googleapis.com"
+    "AI:DOMAIN-SUFFIX,artificialanalysis.ai",
+    "AI:DOMAIN-SUFFIX,cline.bot",
+    "AI:DOMAIN-SUFFIX,commandcode.ai",
+    "AI:DOMAIN-SUFFIX,context7.com",
+    "AI:DOMAIN-SUFFIX,metaaiusercontent.com",
+    "AI:DOMAIN-SUFFIX,nousresearch.com"
   ],
-  "added_count": 3,
+  "added_count": 6,
   "auto_merge_eligible": true,
-  "baseline_rules": 207,
+  "baseline_rules": 210,
   "classification": "low-risk",
-  "generated_rules": 210,
+  "generated_rules": 216,
   "previous_sukka_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "previous_sukka_uncovered": 0,
   "reasons": [],
