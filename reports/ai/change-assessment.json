@@ -1,16 +1,9 @@
 {
-  "actual_change_ratio": 0.028571,
-  "added": [
-    "AI:DOMAIN-SUFFIX,artificialanalysis.ai",
-    "AI:DOMAIN-SUFFIX,cline.bot",
-    "AI:DOMAIN-SUFFIX,commandcode.ai",
-    "AI:DOMAIN-SUFFIX,context7.com",
-    "AI:DOMAIN-SUFFIX,metaaiusercontent.com",
-    "AI:DOMAIN-SUFFIX,nousresearch.com"
-  ],
-  "added_count": 6,
+  "actual_change_ratio": 0.0,
+  "added": [],
+  "added_count": 0,
   "auto_merge_eligible": true,
-  "baseline_rules": 210,
+  "baseline_rules": 216,
   "classification": "low-risk",
   "generated_rules": 216,
   "previous_sukka_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
