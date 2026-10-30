@@ -19,14 +19,14 @@
         "USER-AGENT": 1
       },
       "not_covered_by_generated_count": 16,
-      "only_generated_count": 25,
+      "only_generated_count": 28,
       "only_reference_count": 16,
       "repository": "blackmatrix7/ios_rule_script",
       "requested_ref": "master"
     },
     "sukka": {
-      "commit": "33830e0c4efdedd34c71e5b9ef1e487c9fcbee84",
-      "committed_at": "2026-10-28T16:04:07Z",
+      "commit": "2ee066d7255db0ada982e37673ff4ad1e261634f",
+      "committed_at": "2026-10-30T12:53:28Z",
       "covered_by_generated": 10,
       "domain_rules": 12,
       "entries_persisted": false,
