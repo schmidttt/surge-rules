@@ -3,7 +3,7 @@
     "ai_exclude_patch": 0,
     "ai_include_patch": 2,
     "ai_output": 166,
-    "domestic_ai_reference": 116,
+    "domestic_ai_reference": 119,
     "google_ai_exclude_patch": 0,
     "google_ai_expanded": 49,
     "google_ai_include_patch": 1,
@@ -24,14 +24,14 @@
   "schema_version": 1,
   "source": {
     "sukka_audit": {
-      "commit": "33830e0c4efdedd34c71e5b9ef1e487c9fcbee84",
-      "committed_at": "2026-10-28T16:04:07Z",
+      "commit": "2ee066d7255db0ada982e37673ff4ad1e261634f",
+      "committed_at": "2026-10-30T12:53:28Z",
       "repository": "SukkaW/Surge",
       "requested_ref": "master"
     },
     "v2fly": {
-      "commit": "333d8a1810d04600bcb00870155a369954ed37f5",
-      "committed_at": "2026-10-28T11:17:50Z",
+      "commit": "1daade8c4bb957d21d1f5c09c2b050d699e8e96c",
+      "committed_at": "2026-10-30T13:25:16Z",
       "repository": "v2fly/domain-list-community",
       "requested_ref": "master"
     }
