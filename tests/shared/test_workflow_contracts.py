@@ -10,8 +10,8 @@ PINNED_ACTIONS = {
         "v7.0.1",
     ),
     "actions/setup-python": (
-        "5fda3b95a4ea91299a34e894583c3862153e4b97",
-        "v7.0.0",
+        "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+        "v7.1.0",
     ),
 }
 

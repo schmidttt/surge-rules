@@ -21,8 +21,8 @@
   "schema_version": 1,
   "unsupported_omitted": [],
   "v2fly": {
-    "commit": "44e37212c1154407744543bd1ea5e5750fd44902",
-    "committed_at": "2026-10-24T13:26:29Z",
+    "commit": "1daade8c4bb957d21d1f5c09c2b050d699e8e96c",
+    "committed_at": "2026-10-30T13:25:16Z",
     "list": "bilibili",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
