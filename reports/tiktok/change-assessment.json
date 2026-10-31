@@ -1,22 +1,28 @@
 {
-  "actual_change_count": 0,
-  "actual_change_ratio": 0.0,
-  "added": [],
-  "added_count": 0,
-  "auto_merge_eligible": true,
+  "actual_change_count": 3,
+  "actual_change_ratio": 0.073171,
+  "added": [
+    "DOMAIN-SUFFIX,tiktokshop.com",
+    "DOMAIN-SUFFIX,tiktokstaticb.com",
+    "DOMAIN-SUFFIX,tiktokvapp.com"
+  ],
+  "added_count": 3,
+  "auto_merge_eligible": false,
   "baseline_rules": 41,
-  "classification": "low-risk",
-  "generated_rules": 41,
+  "classification": "medium-risk",
+  "generated_rules": 44,
   "previous_reference_manual_review_count": 0,
   "previous_reference_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "product": "TikTok",
-  "reasons": [],
+  "reasons": [
+    "addition-count-above-auto-merge-limit"
+  ],
   "reference_manual_review_count": 0,
   "reference_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "reference_manual_review_set_changed": false,
   "removed": [],
   "removed_count": 0,
-  "risk_level": "low-risk",
+  "risk_level": "medium-risk",
   "schema_version": 2,
   "thresholds": {
     "automatic_deletions_allowed": false,
