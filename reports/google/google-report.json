@@ -45,8 +45,8 @@
   },
   "schema_version": 2,
   "sukka": {
-    "commit": "d46d9ca1a28e74f2a40f6c0bae93569f85c3aa75",
-    "committed_at": "2026-11-01T07:41:04Z",
+    "commit": "17833159009a1d9390bf0e80c8a47b391bb4dc9e",
+    "committed_at": "2026-11-04T07:38:17Z",
     "repository": "SukkaW/Surge",
     "requested_ref": "master"
   },
@@ -55,8 +55,8 @@
     "regexp:^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$"
   ],
   "v2fly": {
-    "commit": "dd0d168c3b0dde4c92320f7857f5b2970f616361",
-    "committed_at": "2026-11-03T22:30:21Z",
+    "commit": "3895d9a3a76de2c1598a10c5fefc38e3481117fa",
+    "committed_at": "2026-11-04T11:28:29Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
