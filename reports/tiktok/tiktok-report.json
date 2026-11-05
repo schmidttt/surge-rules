@@ -22,8 +22,8 @@
   "schema_version": 1,
   "unsupported_omitted": [],
   "v2fly": {
-    "commit": "dd0d168c3b0dde4c92320f7857f5b2970f616361",
-    "committed_at": "2026-11-03T22:30:21Z",
+    "commit": "3895d9a3a76de2c1598a10c5fefc38e3481117fa",
+    "committed_at": "2026-11-04T11:28:29Z",
     "list": "tiktok",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
