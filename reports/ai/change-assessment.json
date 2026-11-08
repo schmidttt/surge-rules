@@ -1,14 +1,9 @@
 {
-  "actual_change_ratio": 0.018519,
-  "added": [
-    "AI:DOMAIN-SUFFIX,grokbot.com",
-    "AI:DOMAIN,http-intake.logs.us5.datadoghq.com",
-    "AI:DOMAIN,o1158394.ingest.us.sentry.io",
-    "AI:DOMAIN,production-copilot-host-westus.webpubsub.azure.com"
-  ],
-  "added_count": 4,
+  "actual_change_ratio": 0.0,
+  "added": [],
+  "added_count": 0,
   "auto_merge_eligible": true,
-  "baseline_rules": 216,
+  "baseline_rules": 220,
   "classification": "low-risk",
   "generated_rules": 220,
   "previous_sukka_manual_review_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
