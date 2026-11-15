@@ -18,8 +18,8 @@
   },
   "schema_version": 3,
   "sukka": {
-    "commit": "68ddf5cad4581085a0e59d15923579e358a3161e",
-    "committed_at": "2026-11-13T09:34:07Z",
+    "commit": "9d7bb606021107c5cd13eb59cd23744638cce73f",
+    "committed_at": "2026-11-15T15:00:32Z",
     "global_google": {
       "counts": {
         "google_ai": 1,
@@ -32,13 +32,13 @@
     },
     "google_ai": {
       "counts": {
-        "google_ai": 22,
-        "google_main": 1,
+        "google_ai": 23,
+        "google_main": 2,
         "needs_review": 1,
         "youtube": 0
       },
       "entries_persisted": false,
-      "total": 24,
+      "total": 26,
       "unsupported_line_count": 2,
       "unsupported_types": {
         "DOMAIN-KEYWORD": 1,
@@ -49,7 +49,7 @@
     "requested_ref": "master"
   },
   "verification": {
-    "auto_resolved_count": 720,
+    "auto_resolved_count": 722,
     "catalog_decisions": [
       {
         "action": "accept-exact-host",
@@ -78,14 +78,14 @@
       }
     ],
     "covered_by_output": {
-      "Google": 647,
-      "GoogleAI": 22,
+      "Google": 648,
+      "GoogleAI": 23,
       "YouTube": 5
     },
     "decision_counts": {
       "accept-exact-host": 2,
       "corroborated-needs-review": 12,
-      "covered": 674,
+      "covered": 676,
       "single-reference-only": 44
     },
     "manual_review": [
@@ -195,11 +195,11 @@
       "network_observations_are_not_a_hard_gate": true,
       "single_reference_only_is_auto_resolved": true
     },
-    "reference_rule_count": 732,
+    "reference_rule_count": 734,
     "schema_version": 1,
     "source_rule_counts": {
       "blackmatrix": 685,
-      "sukka_ai": 24,
+      "sukka_ai": 26,
       "sukka_global": 98
     }
   }
