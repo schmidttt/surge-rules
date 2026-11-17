@@ -69,8 +69,17 @@ class AutoMergeTests(unittest.TestCase):
             )
         self.assertEqual(calls, [])
 
-    def test_action_required_pr_check_is_approved_watched_and_merged(self):
+    def test_pr_check_waits_for_approval_to_propagate_before_merging(self):
         calls = []
+        states = iter(
+            [
+                ("completed", "action_required"),
+                ("completed", "action_required"),
+                ("queued", ""),
+                ("in_progress", ""),
+                ("completed", "success"),
+            ]
+        )
 
         def fake_runner(args):
             calls.append(list(args))
@@ -86,34 +95,57 @@ class AutoMergeTests(unittest.TestCase):
                         {
                             "databaseId": 99,
                             "headSha": "abc123",
-                            "status": "completed",
-                            "conclusion": "action_required",
+                            "status": "queued",
+                            "conclusion": "",
                         }
                     ]
                 )
+            if args[:2] == ["run", "view"]:
+                status, conclusion = next(states)
+                return json.dumps({"status": status, "conclusion": conclusion})
             return ""
 
         result = self.call_merge(fake_runner)
         self.assertEqual(result, "abc123")
-        self.assertIn(
-            [
-                "api",
-                "--method",
-                "POST",
-                "repos/owner/repo/actions/runs/99/approve",
-            ],
-            calls,
-        )
-        self.assertIn(
-            ["run", "watch", "99", "--repo", "owner/repo", "--exit-status"],
-            calls,
-        )
-        self.assertTrue(any(args[:2] == ["pr", "checks"] for args in calls))
+        approval = [
+            "api",
+            "--method",
+            "POST",
+            "repos/owner/repo/actions/runs/99/approve",
+        ]
+        self.assertEqual(calls.count(approval), 1)
+        views = [i for i, args in enumerate(calls) if args[:3] == ["run", "view", "99"]]
+        self.assertEqual(len(views), 5)
+        self.assertLess(views[0], calls.index(approval))
+        self.assertLess(calls.index(approval), views[1])
+        checks = next(i for i, args in enumerate(calls) if args[:2] == ["pr", "checks"])
+        self.assertLess(views[-1], checks)
         self.assertFalse(any(args[:2] == ["workflow", "run"] for args in calls))
         merge = next(args for args in calls if args[:2] == ["pr", "merge"])
         self.assertIn("--match-head-commit", merge)
         self.assertIn("abc123", merge)
         self.assertNotIn("--delete-branch", merge)
+
+    def test_delayed_pr_validation_run_is_found_for_expected_head(self):
+        calls = []
+        other_run = {"databaseId": 98, "headSha": "other"}
+        expected_run = {"databaseId": 99, "headSha": "abc123"}
+
+        def fake_runner(args):
+            calls.append(list(args))
+            runs = [other_run, expected_run] if len(calls) == 74 else [other_run]
+            return json.dumps(runs)
+
+        result = MODULE.find_pr_validation_run(
+            "owner/repo",
+            "validate-repository.yml",
+            "automation/google-rules-sync",
+            "abc123",
+            fake_runner,
+            lambda _: None,
+        )
+        self.assertEqual(result, expected_run)
+        self.assertEqual(len(calls), 74)
 
     def test_already_successful_pr_check_is_not_approved_again(self):
         calls = []
@@ -260,7 +292,14 @@ class AutoMergeTests(unittest.TestCase):
                 return "abc123\nbase456\n"
             if args[:2] == ["run", "list"]:
                 return json.dumps(
-                    [{"databaseId": 100, "headSha": "def456", "conclusion": "success"}]
+                    [
+                        {
+                            "databaseId": 100,
+                            "headSha": "def456",
+                            "status": "completed",
+                            "conclusion": "success",
+                        }
+                    ]
                 )
             return ""
 
@@ -327,16 +366,18 @@ class AutoMergeTests(unittest.TestCase):
             if args[:2] == ["run", "list"]:
                 return json.dumps(
                     [
-                        {"databaseId": 100, "headSha": "def456", "conclusion": "success"},
-                        {"databaseId": 99, "headSha": "abc123", "conclusion": "success"},
+                        {"databaseId": 100, "headSha": "def456", "status": "queued"},
+                        {"databaseId": 99, "headSha": "abc123", "status": "queued"},
                     ]
                 )
+            if args[:2] == ["run", "view"]:
+                return json.dumps({"status": "completed", "conclusion": "success"})
             return ""
 
         result = self.call_merge(fake_runner)
         self.assertEqual(result, "def456")
-        watched = [args[2] for args in calls if args[:2] == ["run", "watch"]]
-        self.assertEqual(watched, ["99", "100"])
+        polled = [args[2] for args in calls if args[:2] == ["run", "view"]]
+        self.assertEqual(polled, ["99", "100"])
         merge = next(args for args in calls if args[:2] == ["pr", "merge"])
         self.assertIn("def456", merge)
 
@@ -363,8 +404,18 @@ class AutoMergeTests(unittest.TestCase):
             if args[:2] == ["run", "list"]:
                 return json.dumps(
                     [
-                        {"databaseId": 100, "headSha": "def456", "conclusion": "success"},
-                        {"databaseId": 99, "headSha": "abc123", "conclusion": "success"},
+                        {
+                            "databaseId": 100,
+                            "headSha": "def456",
+                            "status": "completed",
+                            "conclusion": "success",
+                        },
+                        {
+                            "databaseId": 99,
+                            "headSha": "abc123",
+                            "status": "completed",
+                            "conclusion": "success",
+                        },
                     ]
                 )
             if args[:2] == ["pr", "merge"]:

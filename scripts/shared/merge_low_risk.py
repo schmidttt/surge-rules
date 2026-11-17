@@ -14,6 +14,8 @@ from urllib.parse import urlparse
 
 GhRunner = Callable[[Sequence[str]], str]
 Sleeper = Callable[[float], None]
+VALIDATION_POLL_INTERVAL = 5
+VALIDATION_POLL_ATTEMPTS = 120
 
 
 class AutoMergeError(RuntimeError):
@@ -258,7 +260,7 @@ def find_pr_validation_run(
     head_sha: str,
     gh_runner: GhRunner,
     sleeper: Sleeper,
-    attempts: int = 30,
+    attempts: int = VALIDATION_POLL_ATTEMPTS,
 ) -> Mapping[str, object]:
     for _ in range(attempts):
         output = gh_runner(
@@ -288,11 +290,11 @@ def find_pr_validation_run(
         for run in runs:
             if isinstance(run, dict) and run.get("headSha") == head_sha:
                 return run
-        sleeper(2)
+        sleeper(VALIDATION_POLL_INTERVAL)
     raise AutoMergeError("pull request validation did not start for {}".format(head_sha))
 
 
-def approve_and_watch_validation(
+def approve_and_wait_for_validation(
     repository: str,
     pr_url: str,
     workflow: str,
@@ -307,21 +309,52 @@ def approve_and_watch_validation(
     run_id = str(run.get("databaseId", ""))
     if not run_id:
         raise AutoMergeError("validation run is missing its database ID")
-    conclusion = run.get("conclusion")
-    if conclusion == "action_required":
-        gh_runner(
-            [
-                "api",
-                "--method",
-                "POST",
-                "repos/{}/actions/runs/{}/approve".format(repository, run_id),
-            ]
-        )
-    elif conclusion not in (None, "", "success"):
+    approval_requested = False
+    for poll in range(VALIDATION_POLL_ATTEMPTS + 1):
+        if poll:
+            sleeper(VALIDATION_POLL_INTERVAL)
+            output = gh_runner(
+                [
+                    "run",
+                    "view",
+                    run_id,
+                    "--repo",
+                    repository,
+                    "--json",
+                    "status,conclusion",
+                ]
+            )
+            try:
+                run = json.loads(output)
+            except ValueError as exc:
+                raise AutoMergeError("could not parse validation run status") from exc
+            if not isinstance(run, dict):
+                raise AutoMergeError("validation run status must be an object")
+
+        conclusion = run.get("conclusion")
+        if run.get("status") == "completed" and conclusion == "success":
+            break
+        if conclusion == "action_required":
+            # GitHub can still report the previous attempt after accepting approval.
+            if not approval_requested:
+                gh_runner(
+                    [
+                        "api",
+                        "--method",
+                        "POST",
+                        "repos/{}/actions/runs/{}/approve".format(repository, run_id),
+                    ]
+                )
+                approval_requested = True
+        elif run.get("status") == "completed":
+            raise AutoMergeError(
+                "pull request validation concluded with {}".format(conclusion)
+            )
+    else:
         raise AutoMergeError(
-            "pull request validation already concluded with {}".format(conclusion)
+            "timed out waiting for pull request validation run {}".format(run_id)
         )
-    gh_runner(["run", "watch", run_id, "--repo", repository, "--exit-status"])
+
     gh_runner(
         [
             "pr",
@@ -407,7 +440,7 @@ def validate_and_merge(
             verify_changed_files(repository, pr_number, allowed_paths, gh_runner)
             continue
 
-        approve_and_watch_validation(
+        approve_and_wait_for_validation(
             repository, pr_url, workflow, branch, head_sha, gh_runner, sleeper
         )
 
