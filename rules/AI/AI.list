@@ -1,8 +1,8 @@
 # NAME: schmidttt's AI Ruleset
 # AUTHOR: schmidttt
 # REPO: https://github.com/schmidttt/surge-rules
-# UPDATED: 2026.11.16 12:37:58
-# TOTAL: 170
+# UPDATED: 2026.11.18 08:38:05
+# TOTAL: 171
 #
 # ======== 上游同步规则 ========
 DOMAIN,ai.com
@@ -96,6 +96,7 @@ DOMAIN-SUFFIX,dreamgen.com
 DOMAIN-SUFFIX,duck.ai
 DOMAIN-SUFFIX,elevenlabs.com
 DOMAIN-SUFFIX,elevenlabs.io
+DOMAIN-SUFFIX,elevenlabsusercontent.com
 DOMAIN-SUFFIX,envato-static.com
 DOMAIN-SUFFIX,envato.com
 DOMAIN-SUFFIX,envatousercontent.com
