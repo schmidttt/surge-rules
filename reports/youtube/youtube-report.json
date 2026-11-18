@@ -22,8 +22,8 @@
   "schema_version": 1,
   "unsupported_omitted": [],
   "v2fly": {
-    "commit": "41504eae2a11f305fe88cfc605cf6c105a80bf5a",
-    "committed_at": "2026-11-16T04:37:58Z",
+    "commit": "178b9452b28a254a97d24e56c84babbe3e3e3dda",
+    "committed_at": "2026-11-18T00:38:05Z",
     "list": "youtube",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
