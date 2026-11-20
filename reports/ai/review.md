@@ -1,7 +1,7 @@
 # GoogleAI / AI 自动审查报告
 
 - v2fly 提交：`bc3a8f5e24792303cf82bfff33b1ff164a0e4b3c`
-- Sukka 对照提交：`a8727444cd47a35464a7f4b74ac669c51e68c2d3`
+- Sukka 对照提交：`32f900e8759db8276cf6c9dcd0cc81f19c61c58f`
 - 自动结论：`low-risk`
 - `GoogleAI.list`：50 条
 - `AI.list`：171 条
@@ -18,7 +18,7 @@
 ## Sukka 设计对照
 
 - Sukka 的 `ai.conf` 是人工维护的混合 AI 表，本项目只用它检查覆盖情况，不直接合并条目。
-- 对照域名规则：56 条；GoogleAI 覆盖：23；AI 覆盖：27；原始范围差异：6；仍需人工：0。
+- 对照域名规则：58 条；GoogleAI 覆盖：23；AI 覆盖：29；原始范围差异：6；仍需人工：0。
 - Sukka 非域名类型：`{'DOMAIN-KEYWORD': 2, 'URL-REGEX': 1}`。
 
 ## 隔离条目
