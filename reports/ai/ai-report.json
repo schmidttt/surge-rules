@@ -30,8 +30,8 @@
       "requested_ref": "master"
     },
     "v2fly": {
-      "commit": "dfa5b1c2258289bdbee70d06352cca23b9bdac7f",
-      "committed_at": "2026-11-23T14:41:52Z",
+      "commit": "98c43cad27fa8f02043858763709fe4a95432ffb",
+      "committed_at": "2026-11-24T09:01:02Z",
       "repository": "v2fly/domain-list-community",
       "requested_ref": "master"
     }
