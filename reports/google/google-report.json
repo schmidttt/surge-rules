@@ -55,8 +55,8 @@
     "regexp:^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$"
   ],
   "v2fly": {
-    "commit": "98c43cad27fa8f02043858763709fe4a95432ffb",
-    "committed_at": "2026-11-24T09:01:02Z",
+    "commit": "e5f669692b33c189efc96cb1a972c69b390bbbc8",
+    "committed_at": "2026-11-25T09:30:32Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
