@@ -49,8 +49,8 @@
   },
   "schema_version": 1,
   "source": {
-    "commit": "e5f669692b33c189efc96cb1a972c69b390bbbc8",
-    "committed_at": "2026-11-25T09:30:32Z",
+    "commit": "99b3169c537639873b56499d3412232b52b6b59b",
+    "committed_at": "2026-11-27T01:34:43Z",
     "repository": "v2fly/domain-list-community",
     "requested_ref": "master"
   },
