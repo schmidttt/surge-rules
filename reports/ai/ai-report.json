@@ -24,23 +24,23 @@
   "schema_version": 1,
   "source": {
     "sukka_audit": {
-      "commit": "03e8353579dee3d9dd47c3e253db7b81ccad6f3b",
-      "committed_at": "2026-11-26T08:42:54Z",
+      "commit": "23305dc014debdda1a59d8c3b7c3586d59d41862",
+      "committed_at": "2026-11-27T12:14:00Z",
       "repository": "SukkaW/Surge",
       "requested_ref": "master"
     },
     "v2fly": {
-      "commit": "99b3169c537639873b56499d3412232b52b6b59b",
-      "committed_at": "2026-11-27T01:34:43Z",
+      "commit": "f68dab92e2ce656bbd81a4ae424de79b179f0f77",
+      "committed_at": "2026-11-27T13:50:14Z",
       "repository": "v2fly/domain-list-community",
       "requested_ref": "master"
     }
   },
   "sukka_audit": {
     "available": true,
-    "covered_by_ai": 29,
+    "covered_by_ai": 28,
     "covered_by_google_ai": 23,
-    "domain_rules": 58,
+    "domain_rules": 57,
     "raw_not_covered_by_output": 6,
     "uncovered": 0,
     "unsupported_types": {
@@ -48,7 +48,7 @@
       "URL-REGEX": 1
     },
     "verification": {
-      "auto_resolved_count": 58,
+      "auto_resolved_count": 57,
       "catalog_decisions": [
         {
           "action": "accept-exact-host",
@@ -100,12 +100,12 @@
         }
       ],
       "covered_by_output": {
-        "AI": 29,
+        "AI": 28,
         "GoogleAI": 23
       },
       "decision_counts": {
         "accept-exact-host": 3,
-        "covered": 52,
+        "covered": 51,
         "exclude-shared-service": 1,
         "single-reference-only": 2
       },
@@ -119,10 +119,10 @@
         "network_observations_are_not_a_hard_gate": true,
         "single_reference_only_is_auto_resolved": true
       },
-      "reference_rule_count": 58,
+      "reference_rule_count": 57,
       "schema_version": 1,
       "source_rule_counts": {
-        "sukka": 58
+        "sukka": 57
       }
     }
   },
